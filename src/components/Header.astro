@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import Reel42 from '../content/assets/reel42.svg'
+import Dark from '../components/modes/Dark.astro'
+import Mono from '../components/modes/Mono.astro'
+
+const { } = Astro.props;
+---
+
+<header>
+  <nav>
+    <a href="#">about</a>
+  </nav>
+	<Image src={Reel42} alt="Reel 42 home" />
+  <div class="controls">
+    <Dark />
+		<Mono />
+  </div>
+</header>
+<style>
+	header {
+		display: flex;
+    justify-content: space-between;
+    align-items: center;
+	}
+</style>
