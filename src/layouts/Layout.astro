@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/space-grotesk';
 import Header from '../components/Header.astro'
 interface Props {
 	title: string;
@@ -43,6 +44,8 @@ const { title } = Astro.props;
 		--primary: var(--orange);
 		--secondary: var(--peach);
 		--tertiary: var(--cream);
+		--primary-text: var(--grey-50);
+		--disabled-text: var(--grey-60);
 	}
 	:root.dark {
 		--bg: var(--grey-10);
@@ -52,7 +55,9 @@ const { title } = Astro.props;
 	}
 	html {
 		background-color: var(--bg);
-		font-family: system-ui, sans-serif;
+	}
+	body {
+		font-family: 'Space Grotesk Variable', sans-serif;
 	}
 	html.mono {
 		filter: grayscale(100%);
@@ -61,15 +66,4 @@ const { title } = Astro.props;
 .dark .nav-links a {
   color: #fff;
 }
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
 </style>

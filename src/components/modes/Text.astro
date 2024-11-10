@@ -1,0 +1,29 @@
+<button class="control-btn text-mode-button" id="textToggle">
+  text (t)
+</button>
+
+<script is:inline>
+
+  const handleTextToggle = () => {
+    const element = document.documentElement;
+    element.classList.toggle("text-mode");
+
+    const isTextOnly = element.classList.contains("text-mode");
+    localStorage.setItem("text-mode", isTextOnly);
+  }
+
+  // Apply initial monochrome state from localStorage
+  const savedTextMode = localStorage.getItem("text-mode");
+  if (savedTextMode) {
+    document.documentElement.classList.add("text-mode");
+  }
+
+  document.getElementById("textToggle").addEventListener("click", handleMonoToggle);
+
+  // Event listeners for key presses (d and m keys)
+  document.addEventListener("keydown", (event) => {
+ if (event.key.toLowerCase() === "t") {
+      handleTextToggle();
+    }
+  });
+</script>

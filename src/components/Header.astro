@@ -3,24 +3,63 @@ import { Image } from 'astro:assets';
 import Reel42 from '../content/assets/reel42.svg'
 import Dark from '../components/modes/Dark.astro'
 import Mono from '../components/modes/Mono.astro'
-
-const { } = Astro.props;
+import Text from '../components/modes/Text.astro'
 ---
 
 <header>
   <nav>
     <a href="#">about</a>
   </nav>
-	<Image src={Reel42} alt="Reel 42 home" />
+  <div class="logo">
+    <Image src={Reel42} alt="Reel 42 home" />
+  </div>
   <div class="controls">
     <Dark />
 		<Mono />
+    <Text />
   </div>
 </header>
 <style>
 	header {
-		display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 24px 36px;
+		display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
 	}
+  header > nav, header > div {
+    width: 100%;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .controls {
+    display: grid;
+    grid-auto-flow: column; 
+    grid-template-columns: repeat(auto-fit, min-content);
+    gap: 12px; 
+    justify-content: end; 
+    width: max-content;
+  }
+  a {
+    text-decoration: none;
+    color: var(--primary-text);
+    font-size: 12px;
+  }
+</style>
+<style is:global>
+  .control-btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--disabled-text);
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+  }
+  .control-btn.is-active {
+    color: var(--primary-text);
+  }
 </style>
