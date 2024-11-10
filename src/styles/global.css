@@ -1,4 +1,49 @@
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
+:root {
+  --white: rgba(254, 254, 254, 100);
+  --black: rgba(1, 1, 1, 100);
+  --grey-10: rgba(24, 22, 21, 100);
+  --grey-20: rgba(34, 32, 31, 100);
+  --grey-30: rgba(44, 42, 41, 100);
+  --grey-40: rgba(54, 52, 51, 100);
+  --grey-50: rgba(95, 95, 95, 100);
+  --grey-60: rgba(197, 195, 191, 100);
+  --grey-70: rgba(217, 215, 211, 100);
+  --grey-80: rgba(227, 225, 221, 100);
+  --grey-90: rgba(237, 235, 231, 100);
+  --orange: rgba(254, 69, 2, 100);
+  --peach: rgba(255, 127, 80, 100);
+  --cream: rgba(221, 216, 196, 100);
+
+  --bg: var(--white);
+  --primary: var(--orange);
+  --secondary: var(--peach);
+  --tertiary: var(--cream);
+  --primary-text: var(--grey-50);
+  --secondary-text: var(--grey-60);
+  --accent-text: var(--peach);
+  --disabled-text: var(--grey-60);
+  --card-bg: var(--grey-90);
+  --card-accent: var(--grey-80);
+}
+:root.dark {
+  --bg: var(--grey-10);
+  --primary: var(--orange);
+  --secondary: var(--peach);
+  --tertiary: var(--cream);
+  --primary-text: var(--grey-50);
+  --secondary-text: var(--grey-40);
+  --accent-text: var(--peach);
+  --disabled-text: var(--grey-40);
+  --card-bg: var(--grey-20);
+  --card-accent: var(--grey-30);
+}
+
+html {
+  background-color: var(--bg);
+}
+body {
+  font-family: 'Space Grotesk Variable', sans-serif;
+}
+html.mono {
+  filter: grayscale(100%);
 }

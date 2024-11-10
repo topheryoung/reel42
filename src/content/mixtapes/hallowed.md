@@ -1,11 +1,10 @@
 ---
-type: "content"
-title: "The Journey of Space Rock"
-genre: ["Rock", "Psychedelic", "Space"]
-id: "space-rock-001"
-href: "https://www.google.com"
-cover: "../assets/tempests_of_titan.png"
-alt: "Album cover showing a cosmic landscape with guitars orbiting planets"
+title: 'Hallowed'
+genre: ['Goth', 'Oldies']
+id: 'space-rock-001'
+href: 'https://www.google.com'
+cover: '../assets/hallowed.png'
+alt: 'Hallowed Mixtape'
 ---
 
 ## The Journey of Space Rock

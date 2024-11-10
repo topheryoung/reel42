@@ -1,11 +1,10 @@
 ---
-type: "content"
-title: "The Journey of Space Rock"
-genre: ["Rock", "Psychedelic", "Space"]
-id: "space-rock-001"
-href: "https://www.google.com"
-cover: "../assets/tempests_of_titan.png"
-alt: "Album cover showing a cosmic landscape with guitars orbiting planets"
+title: 'Tempest of Titan'
+genre: ['Black Medal', 'Post-Rock']
+id: 'MXT-220403-TOT'
+href: 'https://www.google.com'
+cover: '../assets/tempests_of_titan.png'
+alt: 'Tempest of Titan mixtape'
 ---
 
 ## The Journey of Space Rock

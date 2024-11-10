@@ -1,10 +1,10 @@
 ---
-title: "Train to Hakone"
-genre: ["Rock", "Psychedelic", "Space"]
-id: "space-rock-001"
-href: "https://www.google.com"
-cover: "../assets/tempests_of_titan.png"
-alt: "Album cover showing a cosmic landscape with guitars orbiting planets"
+title: 'Train to Hakone'
+genre: ['Japanese', 'Psychedelic', 'Rock']
+id: 'MXT-210101-TTH'
+href: 'https://www.google.com'
+cover: '../assets/train_to_hakone.png'
+alt: 'Train to Hakone Mixtape'
 ---
 
 ## The Journey of Space Rock

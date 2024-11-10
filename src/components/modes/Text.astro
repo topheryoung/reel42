@@ -3,26 +3,33 @@
 </button>
 
 <script is:inline>
+  const applyTextMode = (isTextOnly) => {
+    const element = document.documentElement;
+    const button = document.getElementById("textToggle");
+
+    if (isTextOnly) {
+      element.classList.add("text-mode");
+      button.classList.add("is-active");
+    } else {
+      element.classList.remove("text-mode");
+      button.classList.remove("is-active");
+    }
+
+    localStorage.setItem("text-mode", isTextOnly);
+  };
 
   const handleTextToggle = () => {
-    const element = document.documentElement;
-    element.classList.toggle("text-mode");
+    const isCurrentlyTextMode = document.documentElement.classList.contains("text-mode");
+    applyTextMode(!isCurrentlyTextMode);
+  };
 
-    const isTextOnly = element.classList.contains("text-mode");
-    localStorage.setItem("text-mode", isTextOnly);
-  }
+  const savedTextMode = localStorage.getItem("text-mode") === "true";
+  applyTextMode(savedTextMode);
 
-  // Apply initial monochrome state from localStorage
-  const savedTextMode = localStorage.getItem("text-mode");
-  if (savedTextMode) {
-    document.documentElement.classList.add("text-mode");
-  }
+  document.getElementById("textToggle").addEventListener("click", handleTextToggle);
 
-  document.getElementById("textToggle").addEventListener("click", handleMonoToggle);
-
-  // Event listeners for key presses (d and m keys)
   document.addEventListener("keydown", (event) => {
- if (event.key.toLowerCase() === "t") {
+    if (event.key.toLowerCase() === "t") {
       handleTextToggle();
     }
   });

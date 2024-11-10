@@ -1,11 +1,10 @@
 ---
-type: "content"
-title: "The Journey of Space Rock"
-genre: ["Rock", "Psychedelic", "Space"]
-id: "space-rock-001"
-href: "https://www.google.com"
-cover: "../assets/tempests_of_titan.png"
-alt: "Album cover showing a cosmic landscape with guitars orbiting planets"
+title: 'Lights over Anderson'
+genre: ['Alt Country', 'Oldies']
+id: 'space-rock-001'
+href: 'https://www.google.com'
+cover: '../assets/lights_over_anderson.png'
+alt: 'Lights over Anderson Mixtape'
 ---
 
 ## The Journey of Space Rock

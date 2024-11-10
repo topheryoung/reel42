@@ -12,28 +12,54 @@ interface Props {
 }
 
 const { title, id, href, genre, cover, alt } = Astro.props;
+
+const formatGenres = (genres: string[]): string => genres.join(", ");
 ---
 
-<div class="playlist">
+<div class="card-item">
 	<a href={href} target="_blank">
-		<h2>
+		<h2 class="card-title">
 			{title}
 		</h2>
-		<div class="playlist-info">
-			<h3>{genre}</h3>
-			<h3>{id}</h3>
+		<div class="card-details">
+			<h3>{formatGenres(genre)}</h3>
+			<h3 class="card-id">{id}</h3>
 		</div>
 		<div class="cover-art">
 			<Image src={cover} alt={alt} />
 		</div>
 	</a>
 </div>
+
 <style>
-	.playlist {
-		border-top: 1px solid #D9D9D9;
+	.card-item {
+		border-top: 1px solid var(--card-accent);
+	}
+	a {
+		text-decoration: none;
+	}
+	.card-title {
+		color: var(--primary-text);
+		font-size: 16px;
+		margin-bottom: 6px;
+	}
+	.card-details {
+		color: var(--secondary-text);
+		font-size: 12px;
+		display: flex;
+		justify-content: space-between;
+		margin: 6px auto 12px;
+	}
+	.card-details h3 {
+		margin: 0;
+		font-weight: 400;
+	}
+	.card-id {
+		color: var(--accent-text);
+  	font-family: 'Space Mono', monospace;
 	}
 	.cover-art {
-		background: #F5F5F5;
+		background: var(--card-bg);
 		padding: 24px;
 	}
 	.cover-art img {
