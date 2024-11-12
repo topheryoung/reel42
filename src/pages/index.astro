@@ -3,10 +3,11 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 
-const mixtapes = await getCollection('mixtapes');
+const fetchedMixtapes = await getCollection('mixtapes');
+const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date); // Sort by date in descending order (newest first)
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Reel42">
 	<main>
 		<section role="list" class="card-grid">
 			{mixtapes.map((mix) => (
@@ -18,6 +19,7 @@ const mixtapes = await getCollection('mixtapes');
 						id={mix.data.id}
 						cover={mix.data.cover}
 						alt={mix.data.alt}
+						slug={mix.slug}
 					/>	
 				</>
 			))}
@@ -38,6 +40,27 @@ const mixtapes = await getCollection('mixtapes');
 		grid-template-columns: repeat(4,minmax(0, 1fr));
 		column-gap: 24px;
 		row-gap: 40px;
+	}
+
+	/* Small desktop (3 columns) */
+	@media (max-width: 1200px) {
+		.card-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	/* Tablet (2 columns) */
+	@media (max-width: 768px) {
+		.card-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	/* Mobile (1 column) */
+	@media (max-width: 480px) {
+		.card-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 </style>

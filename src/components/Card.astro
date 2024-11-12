@@ -9,15 +9,16 @@ interface Props {
 	genre: string[];
 	cover: ImageMetadata
 	alt: string
+	slug: string
 }
 
-const { title, id, href, genre, cover, alt } = Astro.props;
+const { title, id, href, genre, cover, alt, slug } = Astro.props;
 
 const formatGenres = (genres: string[]): string => genres.join(", ");
 ---
 
 <div class="card-item">
-	<a href={href} target="_blank">
+	<a href={`/mixtapes/${slug}`} data-astro-prefetch>
 		<h2 class="card-title">
 			{title}
 		</h2>
@@ -26,7 +27,7 @@ const formatGenres = (genres: string[]): string => genres.join(", ");
 			<h3 class="card-id">{id}</h3>
 		</div>
 		<div class="cover-art">
-			<Image src={cover} alt={alt} />
+			<Image src={cover} alt={alt} loading="eager"/>
 		</div>
 	</a>
 </div>

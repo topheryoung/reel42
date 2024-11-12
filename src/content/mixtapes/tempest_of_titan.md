@@ -5,6 +5,7 @@ id: 'MXT-220403-TOT'
 href: 'https://www.google.com'
 cover: '../assets/tempests_of_titan.png'
 alt: 'Tempest of Titan mixtape'
+date: 231031
 ---
 
 ## The Journey of Space Rock

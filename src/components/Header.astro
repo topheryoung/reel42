@@ -8,10 +8,12 @@ import Text from '../components/modes/Text.astro'
 
 <header>
   <nav>
-    <a href="#">about</a>
+    <a href="/about" data-astro-prefetch>about</a>
   </nav>
   <div class="logo">
-    <Image src={Reel42} alt="Reel 42 home" />
+    <a href="/" data-astro-prefetch>
+    <Image src={Reel42} alt="Reel 42 home" loading="eager"/>
+    </a>
   </div>
   <div class="controls">
     <Dark />

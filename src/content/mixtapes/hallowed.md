@@ -5,6 +5,7 @@ id: 'space-rock-001'
 href: 'https://www.google.com'
 cover: '../assets/hallowed.png'
 alt: 'Hallowed Mixtape'
+date: 241111
 ---
 
 ## The Journey of Space Rock

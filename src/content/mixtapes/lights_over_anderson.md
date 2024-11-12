@@ -5,6 +5,7 @@ id: 'space-rock-001'
 href: 'https://www.google.com'
 cover: '../assets/lights_over_anderson.png'
 alt: 'Lights over Anderson Mixtape'
+date: 241101
 ---
 
 ## The Journey of Space Rock

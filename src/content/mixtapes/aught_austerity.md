@@ -5,6 +5,7 @@ id: 'space-rock-001'
 href: 'https://www.google.com'
 cover: '../assets/aught_austerity.png'
 alt: 'Aught Austerity Mixtape'
+date: 240317
 ---
 
 ## The Journey of Space Rock

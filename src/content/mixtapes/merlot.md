@@ -1,11 +1,11 @@
 ---
-title: 'Train to Hakone'
-genre: ['Japanese', 'Psychedelic', 'Rock']
-id: 'MXT-210101-TTH'
+title: 'Merlot'
+genre: ['Alt Rock', 'Indie']
+id: 'space-rock-001'
 href: 'https://www.google.com'
-cover: '../assets/train_to_hakone.png'
-alt: 'Train to Hakone Mixtape'
-date: 230613
+cover: '../assets/merlot.png'
+alt: 'LW843 Mixtape'
+date: 241111
 ---
 
 ## The Journey of Space Rock
