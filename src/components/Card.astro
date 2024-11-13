@@ -18,7 +18,7 @@ const formatGenres = (genres: string[]): string => genres.join(", ");
 ---
 
 <div class="card-item">
-	<a href={`/mixtapes/${slug}`} data-astro-prefetch>
+	<a href={`/mixtape/${slug}`} data-astro-prefetch>
 		<h2 class="card-title">
 			{title}
 		</h2>
@@ -27,7 +27,7 @@ const formatGenres = (genres: string[]): string => genres.join(", ");
 			<h3 class="card-id">{id}</h3>
 		</div>
 		<div class="cover-art">
-			<Image src={cover} alt={alt} loading="eager"/>
+			<Image src={cover} alt={alt} loading="lazy"/>
 		</div>
 	</a>
 </div>
@@ -66,5 +66,6 @@ const formatGenres = (genres: string[]): string => genres.join(", ");
 	.cover-art img {
 		width: 100%;
 		height: auto;
+		aspect-ratio: 1;
 	}
 </style>

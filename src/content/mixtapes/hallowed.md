@@ -2,7 +2,7 @@
 title: 'Hallowed'
 genre: ['Goth', 'Oldies']
 id: 'space-rock-001'
-href: 'https://www.google.com'
+href: { spotify: 'https://www.google.com' }
 cover: '../assets/hallowed.png'
 alt: 'Hallowed Mixtape'
 date: 241111

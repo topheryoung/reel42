@@ -2,7 +2,7 @@
 title: 'Merlot'
 genre: ['Alt Rock', 'Indie']
 id: 'space-rock-001'
-href: 'https://www.google.com'
+href: { spotify: 'https://www.google.com' }
 cover: '../assets/merlot.png'
 alt: 'LW843 Mixtape'
 date: 241111

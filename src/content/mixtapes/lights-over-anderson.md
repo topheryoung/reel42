@@ -1,11 +1,11 @@
 ---
-title: 'Tempest of Titan'
-genre: ['Black Medal', 'Post-Rock']
-id: 'MXT-220403-TOT'
-href: 'https://www.google.com'
-cover: '../assets/tempests_of_titan.png'
-alt: 'Tempest of Titan mixtape'
-date: 231031
+title: 'Lights over Anderson'
+genre: ['Alt Country', 'Oldies']
+id: 'space-rock-001'
+href: { spotify: 'https://www.google.com' }
+cover: '../assets/lights_over_anderson.png'
+alt: 'Lights over Anderson Mixtape'
+date: 241101
 ---
 
 ## The Journey of Space Rock

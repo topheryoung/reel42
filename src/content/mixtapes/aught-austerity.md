@@ -1,11 +1,11 @@
 ---
-title: 'Train to Hakone'
-genre: ['Japanese', 'Psychedelic', 'Rock']
-id: 'MXT-210101-TTH'
-href: 'https://www.google.com'
-cover: '../assets/train_to_hakone.png'
-alt: 'Train to Hakone Mixtape'
-date: 230613
+title: 'Aught Austerity'
+genre: ['Alt Rock', 'Indie']
+id: 'space-rock-001'
+href: { spotify: 'https://www.google.com' }
+cover: '../assets/aught_austerity.png'
+alt: 'Aught Austerity Mixtape'
+date: 240317
 ---
 
 ## The Journey of Space Rock
