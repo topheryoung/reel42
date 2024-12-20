@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 
 const fetchedMixtapes = await getCollection('mixtapes');
-const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date); // Sort by date in descending order (newest first)
+const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date);
 ---
 
 <Layout title="Reel42">

@@ -28,8 +28,7 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
     </div>
     <div class="cover-art">
       <div class="cover-frame">
-        <div class="pixelate"></div>
-        <Image src={cover} alt={alt} loading="lazy" class="cover" />
+        <Image src={cover} alt={alt} class="cover" />
       </div>
     </div>
   </a>
@@ -41,6 +40,7 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
   }
   a {
     text-decoration: none;
+    color: transparent;
   }
   .card-title {
     color: var(--primary-text);
@@ -78,5 +78,6 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
     width: 100%;
     height: auto;
     aspect-ratio: 1;
+    color: transparent;
   }
 </style>
