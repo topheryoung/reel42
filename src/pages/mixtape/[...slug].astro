@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import Spotify from '../../icons/spotify.svg?raw';
 
 export async function getStaticPaths() {
   const mixtapes = await getCollection('mixtapes');

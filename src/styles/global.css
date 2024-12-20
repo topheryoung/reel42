@@ -47,6 +47,7 @@ html {
 }
 body {
   font-family: 'Hanken Grotesk Variable', Helvetica, sans-serif;
+  margin: 24px;
 }
 html.mono {
   filter: grayscale(100%);

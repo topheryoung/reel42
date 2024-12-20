@@ -14,7 +14,7 @@ const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date); // S
         mixtapes.map((mix) => (
           <>
             <Card
-              href={mix.data.href}
+              href={mix.data.href.spotify}
               title={mix.data.title}
               genre={mix.data.genre}
               id={mix.data.id}
@@ -39,7 +39,7 @@ const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date); // S
   }
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 24px;
     row-gap: 40px;
   }
