@@ -18,31 +18,35 @@
   --primary: var(--orange);
   --secondary: var(--peach);
   --tertiary: var(--cream);
+  --header-text: var(--grey-20);
   --primary-text: var(--grey-50);
   --secondary-text: var(--grey-60);
   --accent-text: var(--peach);
   --disabled-text: var(--grey-60);
   --card-bg: var(--grey-90);
   --card-accent: var(--grey-80);
+  --primary-btn: var(--grey-20);
 }
 :root.dark {
   --bg: var(--grey-10);
   --primary: var(--orange);
   --secondary: var(--peach);
   --tertiary: var(--cream);
+  --header-text: var(--grey-80);
   --primary-text: var(--grey-50);
   --secondary-text: var(--grey-40);
   --accent-text: var(--peach);
   --disabled-text: var(--grey-40);
   --card-bg: var(--grey-20);
   --card-accent: var(--grey-30);
+  --primary-btn: var(--grey-80);
 }
 
 html {
   background-color: var(--bg);
 }
 body {
-  font-family: 'Space Grotesk Variable', sans-serif;
+  font-family: 'Hanken Grotesk Variable', Helvetica, sans-serif;
 }
 html.mono {
   filter: grayscale(100%);

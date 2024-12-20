@@ -1,35 +1,35 @@
-<button class="control-btn mono-mode-button" id="monoToggle">
-  mono (m)
-</button>
+<button class="control-btn mono-mode-button" id="monoToggle"> mono (m) </button>
 
 <script is:inline>
   const applyMonoMode = (isMono) => {
     const element = document.documentElement;
-    const button = document.getElementById("monoToggle");
+    const button = document.getElementById('monoToggle');
 
     if (isMono) {
-      element.classList.add("mono");
-      button.classList.add("is-active");
+      element.classList.add('mono');
+      button.classList.add('is-active');
     } else {
-      element.classList.remove("mono");
-      button.classList.remove("is-active");
+      element.classList.remove('mono');
+      button.classList.remove('is-active');
     }
 
-    localStorage.setItem("mono", isMono ? "mono" : "color");
+    localStorage.setItem('mono', isMono ? 'mono' : 'color');
   };
 
   const handleMonoToggle = () => {
-    const isCurrentlyMono = document.documentElement.classList.contains("mono");
+    const isCurrentlyMono = document.documentElement.classList.contains('mono');
     applyMonoMode(!isCurrentlyMono);
   };
 
-  const savedMono = localStorage.getItem("mono") === "mono";
+  const savedMono = localStorage.getItem('mono') === 'mono';
   applyMonoMode(savedMono);
 
-  document.getElementById("monoToggle").addEventListener("click", handleMonoToggle);
+  document
+    .getElementById('monoToggle')
+    .addEventListener('click', handleMonoToggle);
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key.toLowerCase() === "m") {
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'm') {
       handleMonoToggle();
     }
   });

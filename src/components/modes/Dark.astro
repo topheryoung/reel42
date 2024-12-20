@@ -3,7 +3,6 @@
 </button>
 
 <script is:inline>
-
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme');
@@ -16,14 +15,14 @@
 
   const applyTheme = (theme) => {
     const element = document.documentElement;
-    const button = document.getElementById("themeToggle");
+    const button = document.getElementById('themeToggle');
 
     if (theme === 'dark') {
-      element.classList.add("dark");
-      button.classList.add("is-active");
+      element.classList.add('dark');
+      button.classList.add('is-active');
     } else {
-      element.classList.remove("dark");
-      button.classList.remove("is-active");
+      element.classList.remove('dark');
+      button.classList.remove('is-active');
     }
 
     localStorage.setItem('theme', theme);
@@ -32,14 +31,18 @@
   applyTheme(theme);
 
   const handleToggleClick = () => {
-    const newTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
+    const newTheme = document.documentElement.classList.contains('dark')
+      ? 'light'
+      : 'dark';
     applyTheme(newTheme);
   };
 
-  document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+  document
+    .getElementById('themeToggle')
+    .addEventListener('click', handleToggleClick);
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key.toLowerCase() === "d") {
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'd') {
       handleToggleClick();
     }
   });

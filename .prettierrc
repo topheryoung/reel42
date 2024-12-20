@@ -7,15 +7,5 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "printWidth": 80,
-  "proseWrap": "preserve",
-  "overrides": [
-    {
-      "files": "*.astro",
-      "options": {
-        "parser": "astro",
-        "printWidth": 80,
-        "singleQuote": true
-      }
-    }
-  ]
+  "proseWrap": "preserve"
 }

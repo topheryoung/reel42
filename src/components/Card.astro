@@ -3,69 +3,80 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
-	title: string;
-	id: string;
-	href: string;
-	genre: string[];
-	cover: ImageMetadata
-	alt: string
-	slug: string
+  title: string;
+  id: string;
+  href: string;
+  genre: string[];
+  cover: ImageMetadata;
+  alt: string;
+  slug: string;
 }
 
 const { title, id, href, genre, cover, alt, slug } = Astro.props;
 
-const formatGenres = (genres: string[]): string => genres.join(", ");
+const formatGenres = (genres: string[]): string => genres.join(', ');
 ---
 
 <div class="card-item">
-	<a href={`/mixtape/${slug}`} data-astro-prefetch>
-		<h2 class="card-title">
-			{title}
-		</h2>
-		<div class="card-details">
-			<h3>{formatGenres(genre)}</h3>
-			<h3 class="card-id">{id}</h3>
-		</div>
-		<div class="cover-art">
-			<Image src={cover} alt={alt} loading="lazy"/>
-		</div>
-	</a>
+  <a href={`/mixtape/${slug}`} data-astro-prefetch>
+    <h2 class="card-title">
+      {title}
+    </h2>
+    <div class="card-details">
+      <h3>{formatGenres(genre)}</h3>
+      <h3 class="card-id">{id}</h3>
+    </div>
+    <div class="cover-art">
+      <div class="cover-frame">
+        <div class="pixelate"></div>
+        <Image src={cover} alt={alt} loading="lazy" class="cover" />
+      </div>
+    </div>
+  </a>
 </div>
 
 <style>
-	.card-item {
-		border-top: 1px solid var(--card-accent);
-	}
-	a {
-		text-decoration: none;
-	}
-	.card-title {
-		color: var(--primary-text);
-		font-size: 16px;
-		margin-bottom: 6px;
-	}
-	.card-details {
-		color: var(--secondary-text);
-		font-size: 12px;
-		display: flex;
-		justify-content: space-between;
-		margin: 6px auto 12px;
-	}
-	.card-details h3 {
-		margin: 0;
-		font-weight: 400;
-	}
-	.card-id {
-		color: var(--accent-text);
-  	font-family: 'Space Mono', monospace;
-	}
-	.cover-art {
-		background: var(--card-bg);
-		padding: 24px;
-	}
-	.cover-art img {
-		width: 100%;
-		height: auto;
-		aspect-ratio: 1;
-	}
+  .card-item {
+    border-top: 1px solid var(--card-accent);
+  }
+  a {
+    text-decoration: none;
+  }
+  .card-title {
+    color: var(--primary-text);
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .card-details {
+    color: var(--secondary-text);
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 6px auto 12px;
+  }
+  .card-details h3 {
+    margin: 0;
+    font-weight: 400;
+  }
+  .card-id {
+    color: var(--accent-text);
+    font-family: 'Space Mono', monospace;
+  }
+  .cover-frame {
+    position: relative;
+    background: var(--secondary-text);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  .cover-art {
+    background: var(--card-bg);
+    padding: 24px;
+  }
+  .cover {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
 </style>

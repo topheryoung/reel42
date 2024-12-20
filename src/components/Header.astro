@@ -1,34 +1,39 @@
 ---
 import { Image } from 'astro:assets';
-import Reel42 from '../icons/reel42.svg'
-import Dark from '../components/modes/Dark.astro'
-import Mono from '../components/modes/Mono.astro'
+import Reel42 from '../icons/reel42.svg';
+import Dark from '../components/modes/Dark.astro';
+import Mono from '../components/modes/Mono.astro';
+
+const isAboutPage = Astro.url.pathname === '/about';
 ---
 
 <header>
   <nav>
-    <a href="/about" data-astro-prefetch>about</a>
+    <a href={isAboutPage ? '/' : '/about'} data-astro-prefetch>
+      {isAboutPage ? 'back' : 'about'}
+    </a>
   </nav>
   <div class="logo">
     <a href="/" data-astro-prefetch>
-    <Image src={Reel42} alt="Reel 42 home" loading="eager"/>
+      <Image src={Reel42} alt="Reel 42 home" loading="eager" />
     </a>
   </div>
   <div class="controls">
     <Dark />
-		<Mono />
+    <Mono />
   </div>
 </header>
 <style>
-	header {
+  header {
     padding: 24px 36px;
-		display: grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 0px; 
-	}
-  header > nav, header > div {
+    grid-row-gap: 0px;
+  }
+  header > nav,
+  header > div {
     width: 100%;
   }
   .logo {
@@ -37,10 +42,10 @@ import Mono from '../components/modes/Mono.astro'
   }
   .controls {
     display: grid;
-    grid-auto-flow: column; 
+    grid-auto-flow: column;
     grid-template-columns: repeat(auto-fit, min-content);
-    gap: 12px; 
-    justify-content: end; 
+    gap: 12px;
+    justify-content: end;
     width: max-content;
   }
   a {

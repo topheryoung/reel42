@@ -3,17 +3,87 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Reel42 | About">
-	<main>
-		<h1>About</h1>
-	</main>
+  <main>
+    <h1>About Reel42</h1>
+    <hr />
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur. Duis diam erat dictum amet
+        mauris enim. Tellus quisque eros purus vulputate fames interdum aliquet
+        rutrum varius. Pharetra mauris turpis elit ullamcorper sed. Urna enim
+        suspendisse posuere tellus. Tortor mi in aliquet congue mauris eget
+        lobortis tellus ridiculus. Morbi vestibulum ipsum nibh iaculis
+        ullamcorper. Vestibulum ipsum integer risus sem eros leo quis feugiat
+        fermentum. Adipiscing egestas est tellus convallis. Ut vulputate semper
+        turpis augue sed tempor lacus parturient. Pellentesque sit amet duis
+        aliquam.
+      </p>
+      <p>
+        Mollis suspendisse quis dignissim in. Eu dictum viverra ac enim
+        ultrices. Leo elit ac est a neque vel malesuada nunc. Nulla purus ut non
+        proin sodales consectetur. Euismod faucibus semper leo tincidunt
+        phasellus. Non pulvinar est dictumst tortor tempor eleifend. Suspendisse
+        morbi nulla a ultrices purus blandit quis cras id. Imperdiet arcu nisi
+        dui at placerat amet commodo arcu. Eget volutpat quis malesuada morbi
+        nunc nulla libero nunc. Convallis turpis lectus molestie scelerisque.
+        Sed habitasse mi facilisis pulvinar donec sed semper. Nunc amet et diam
+        amet. Platea sapien aenean pellentesque ultrices euismod ac lacinia
+        adipiscing. Pellentesque tempus quis cras sit enim nisl diam. Gravida
+        condimentum enim iaculis in ac arcu sed.
+      </p>
+      <p>
+        Eget ultrices sit laoreet proin volutpat fermentum. Pretium quis sed cum
+        enim enim orci amet amet. Massa eu nec duis augue odio lacus facilisi.
+        Aliquam maecenas at neque pulvinar quis. Etiam in massa etiam vitae sit.
+        Fringilla purus ultrices bibendum ultrices sed dictum. Ultricies
+        maecenas eget iaculis vitae id interdum. Morbi fames diam mi est vitae.
+        Malesuada tortor quam mus adipiscing purus volutpat velit. Fusce ut id
+        pharetra nullam. Nunc non pharetra scelerisque congue nunc aliquam
+        ornare faucibus et.
+      </p>
+      Sincerely, Hugh Janus
+    </div>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: 64px auto;
-		padding: 1rem;
-		font-size: 20px;
-		line-height: 1.6;
-	}
+  main {
+    margin: 64px auto;
+    padding: 1rem;
+    font-size: 20px;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
+    gap: 32px;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: clamp(8vw, 13vw, 20vw);
+    color: var(--header-text);
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  hr {
+    width: 180px;
+    border: none;
+    border-top: 1px solid var(--card-accent);
+    margin: 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
 
+  .content p {
+    max-width: 700px;
+    margin: 0;
+    color: var(--primary-text);
+  }
 </style>
