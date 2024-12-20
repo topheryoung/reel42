@@ -1,14 +1,12 @@
 ---
-title: 'Tempest of Titan'
-genre: ['Black Medal', 'Post-Rock']
-id: '2311TOT'
+title: 'Hallowed'
+genre: ['Goth', 'Oldies']
+displayID: 'space-rock-001'
 href: { spotify: 'https://www.google.com' }
-cover: '../assets/tempests_of_titan.png'
-alt: 'Tempest of Titan mixtape'
-date: 231031
+cover: '../assets/hallowed.png'
+alt: 'Hallowed Mixtape'
+date: 241111
 ---
-
-## Tempest of Titan
 
 Explore the mesmerizing sounds of space rock—a genre that combines the intensity of rock with the ethereal quality of cosmic themes. From the ambient layers of synthesizers to the deep, rhythmic bass lines, this playlist takes you on a journey across the stars.
 

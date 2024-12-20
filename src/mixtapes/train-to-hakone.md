@@ -1,7 +1,7 @@
 ---
 title: 'Train to Hakone'
 genre: ['Japanese', 'Psychedelic', 'Rock']
-id: 'TTH'
+displayID: 'TTH'
 href: { spotify: 'https://www.google.com' }
 cover: '../assets/train_to_hakone.jpg'
 alt: 'Train to Hakone Mixtape'

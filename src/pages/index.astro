@@ -17,10 +17,10 @@ const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date); // S
               href={mix.data.href.spotify}
               title={mix.data.title}
               genre={mix.data.genre}
-              id={mix.data.id}
+              displayID={mix.data.displayID}
               cover={mix.data.cover}
               alt={mix.data.alt}
-              slug={mix.slug}
+              id={mix.id}
             />
           </>
         ))

@@ -1,14 +1,12 @@
 ---
-title: 'Hallowed'
-genre: ['Goth', 'Oldies']
-id: 'space-rock-001'
+title: 'Aught Austerity'
+genre: ['Alt Rock', 'Indie']
+displayID: 'space-rock-001'
 href: { spotify: 'https://www.google.com' }
-cover: '../assets/hallowed.png'
-alt: 'Hallowed Mixtape'
-date: 241111
+cover: '../assets/aught_austerity.png'
+alt: 'Aught Austerity Mixtape'
+date: 240317
 ---
-
-## The Journey of Space Rock
 
 Explore the mesmerizing sounds of space rock—a genre that combines the intensity of rock with the ethereal quality of cosmic themes. From the ambient layers of synthesizers to the deep, rhythmic bass lines, this playlist takes you on a journey across the stars.
 
