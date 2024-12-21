@@ -1,7 +1,7 @@
 ---
 title: '2020 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2020']
-displayID: '2020-EOY-LOOSIES'
+displayID: '122020-EOY-002'
 href:
   {
     spotify: 'https://open.spotify.com/playlist/6vYbT1lvie7XeNXaMLTXdh?si=5d5b5d9647284eef',

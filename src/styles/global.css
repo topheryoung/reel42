@@ -52,3 +52,15 @@ body {
 html.mono {
   filter: grayscale(100%);
 }
+
+@media (max-width: 768px) {
+  body {
+    margin: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+}
