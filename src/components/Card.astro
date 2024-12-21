@@ -44,7 +44,7 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
   }
   .card-title {
     color: var(--primary-text);
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 6px;
   }
   .card-details {
@@ -57,6 +57,7 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
   .card-details h3 {
     margin: 0;
     font-weight: 400;
+    font-size: 12px;
   }
   .card-id {
     color: var(--accent-text);
@@ -79,5 +80,12 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
     height: auto;
     aspect-ratio: 1;
     color: transparent;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .card-details {
+      flex-direction: column-reverse;
+    }
   }
 </style>
