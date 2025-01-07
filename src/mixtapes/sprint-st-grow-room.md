@@ -1,22 +1,18 @@
 ---
 title: 'Sprint St Grow Room'
 genre: ['Indie Pop', 'Electronic Indie']
-displayID: '101114-SSGW-002'
 href:
   {
     spotify: 'https://open.spotify.com/playlist/4xOxSEE4bxzMlv1uNzJtPh?si=cc20fb9db29046eb',
   }
 cover: '../assets/sprint_st_grow_room.jpg'
-alt: 'Sprint St Grow Room'
-date: 141011
+date: 2102
 ---
-
-Lorem Ipsum
 
 Track List
 
 - Passion Pit - The Reeling
-- MGMT - Flash Delirium
+- MGMT - Kids
 - M83 - Midnight City
 - Phoenix - 1901
 - STRFKR - Rawnald Gregory Erickson the Seconds

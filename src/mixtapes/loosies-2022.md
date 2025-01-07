@@ -1,14 +1,12 @@
 ---
 title: '2022 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2022']
-displayID: '2022-EOY-LOOSIES'
 href:
   {
     spotify: 'https://open.spotify.com/playlist/43z18rYrvKI2awNMOYb9lO?si=af651f6912654713',
   }
 cover: '../assets/loosies/2022.jpg'
-alt: '2022 Loosies & Highlights'
-date: 221221
+date: 2212
 ---
 
 2022 was a monster year for music released that really resenated with me. Black Country, New Road released what I would consider to be a Top 5 album for me of all time. We had tickets to go see them and with the unfortunate departure of the lead singer caused cancellations. I have a suspicion this will be one of those "bucket list" moments. This year was also met with some amazing travel and also began a tradition where I will save an album for the trip to hammer in some nostalgia - like listening to Toro y Moi riding a high speed train to Madrid.

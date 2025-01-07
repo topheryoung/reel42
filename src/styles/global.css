@@ -64,3 +64,8 @@ html.mono {
     margin: 0;
   }
 }
+
+.md-content ul {
+  margin-top: -10px;
+  padding-left: 20px;
+}

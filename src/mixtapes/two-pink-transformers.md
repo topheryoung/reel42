@@ -1,17 +1,13 @@
 ---
 title: 'Two Pink Transformers'
 genre: ['Electro Funk', 'EDM']
-displayID: '050214-TPT-003'
 href:
   {
     spotify: 'https://open.spotify.com/playlist/1abMY7CMy7czckUX6TwuU6?si=4d0a683cc5f34472',
   }
 cover: '../assets/two_pink_transformers.jpg'
-alt: 'Two Pink Transformers'
-date: 140205
+date: 2002
 ---
-
-Lorem Ipsum
 
 Track List
 

@@ -1,17 +1,18 @@
 ---
 title: 'Tempest of Titan'
-genre: ['Black Medal', 'Post-Rock']
-displayID: '2311TOT'
-href: { spotify: 'https://www.google.com' }
+genre: ['Black Metal', 'Post-Rock']
+href:
+  {
+    spotify: 'https://open.spotify.com/playlist/6kIvI4ICB256VWapu7pOrx?si=f9d8fb722ac74f40',
+  }
 cover: '../assets/tempests_of_titan.png'
-alt: 'Tempest of Titan mixtape'
-date: 231031
+date: 2306
 ---
 
-## Tempest of Titan
+Track List
 
-Explore the mesmerizing sounds of space rock—a genre that combines the intensity of rock with the ethereal quality of cosmic themes. From the ambient layers of synthesizers to the deep, rhythmic bass lines, this playlist takes you on a journey across the stars.
-
-Featuring classics from the genre's pioneers and fresh tracks from emerging artists, _The Journey of Space Rock_ is perfect for stargazing, road trips, or simply losing yourself in the vastness of sound.
-
-[Listen to the Playlist](https://example.com/space-rock-playlist)
+- Deafheaven - Dream House
+- Agriculture - Living Is Easy
+- Together to the Stars - Timeless
+- Show Me A Dinosaur - Red River
+- Converge - Wretched World

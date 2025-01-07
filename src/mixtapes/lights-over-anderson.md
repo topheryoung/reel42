@@ -1,17 +1,25 @@
 ---
 title: 'Lights over Anderson'
-genre: ['Alt Country', 'Oldies']
-displayID: 'space-rock-001'
-href: { spotify: 'https://www.google.com' }
+genre: ['Alt Country', 'Indie']
+href:
+  {
+    spotify: 'https://open.spotify.com/playlist/3PrZEeLZdgiio7GEyz095Z?si=dd73ea64d9c2422a',
+  }
 cover: '../assets/lights_over_anderson.png'
-alt: 'Lights over Anderson Mixtape'
-date: 241101
+date: 2410
 ---
 
-## The Journey of Space Rock
+Track List
 
-Explore the mesmerizing sounds of space rock—a genre that combines the intensity of rock with the ethereal quality of cosmic themes. From the ambient layers of synthesizers to the deep, rhythmic bass lines, this playlist takes you on a journey across the stars.
-
-Featuring classics from the genre's pioneers and fresh tracks from emerging artists, _The Journey of Space Rock_ is perfect for stargazing, road trips, or simply losing yourself in the vastness of sound.
-
-[Listen to the Playlist](https://example.com/space-rock-playlist)
+- Big Blood - 1000 Times
+- Brigitte Calls Me Baby - Eddie My Love
+- Slaughter Beach, Dog - Your Cat
+- The Murlocs - Initiative
+- Cut Worms - Don't Fade Out
+- A. Savage - I Can't Shake the Stranger Out of You
+- semiwestern - velvet sea
+- Peach Pit - Black Licorice
+- MJ Lenderman - Manning Fireworks
+- French Cassettes - Megabus
+- Shannon & The Clams - Real Or Magic
+- The Wisconaut - Can't Kill A Cowboy

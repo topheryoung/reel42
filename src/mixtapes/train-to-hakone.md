@@ -1,20 +1,23 @@
 ---
 title: 'Train to Hakone'
-genre: ['Japanese', 'Psychedelic', 'Rock']
-displayID: 'TTH'
-href: { spotify: 'https://www.google.com' }
+genre: ['Dream Pop', 'Shoegaze', 'Japanese']
+href:
+  {
+    spotify: 'https://open.spotify.com/playlist/6IdAjK3xGFKlhwuNik8KyI?si=2167a83ad64d4b54',
+  }
 cover: '../assets/train_to_hakone.jpg'
-alt: 'Train to Hakone Mixtape'
-date: 230613
+date: 2108
 ---
-
-Lorem ipsum dolor sit amet consectetur. Egestas amet bibendum in enim massa. Suspendisse condimentum id purus nibh arcu augue sem cras. Netus posuere eget metus felis nunc consectetur commodo. Quis ullamcorper turpis mattis turpis in iaculis ultricies sit sed.
 
 Track List
 
-- Artist - Title
-- Artist - Title
-- Artist - Title
-- Artist - Title
-- Artist - Title
-- Artist - Title
+- jizue - Tower
+- CQ - Disco Crimson
+- THE NOVEMBERS - 美しい火
+- Oeil - Strawberry Cream
+- Cruyff In The Bedroom - yasasihikari
+- paranoid void - カルマの犬
+- tricot - artsick
+- yuragi - Unreachable
+- otom - Normalize
+- a picture of her - Summer Retreat
