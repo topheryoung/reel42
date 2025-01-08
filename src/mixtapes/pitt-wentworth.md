@@ -6,7 +6,7 @@ href:
     spotify: 'https://open.spotify.com/playlist/1hE6gBi88csVWoxpSF1DTu?si=17c12d2b4a8b4236',
   }
 cover: '../assets/pitt_wentworth.jpg'
-date: 2001
+date: 20.01
 ---
 
 Track List
