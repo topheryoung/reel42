@@ -13,9 +13,18 @@ interface Props {
     retro: ImageMetadata;
   };
   alt: string;
+  loading?: 'lazy' | 'eager';
 }
 
-const { title, id, displayID, genre, cover, alt } = Astro.props;
+const {
+  title,
+  id,
+  displayID,
+  genre,
+  cover,
+  alt,
+  loading = 'lazy',
+} = Astro.props;
 
 const formatGenres = (genres: string[]): string => genres.join(', ');
 ---
@@ -31,8 +40,7 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
     </div>
     <div class="cover-art">
       <div class="cover-frame">
-        <Image src={cover.retro} alt={alt} class="retro-cover" />
-        <Image src={cover.default} alt={alt} class="cover" />
+        <Image src={cover.default} alt={alt} class="cover" loading={loading} />
       </div>
     </div>
   </a>

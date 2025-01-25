@@ -6,6 +6,8 @@ import { buildDisplayId } from '../utils/displayId';
 
 const fetchedMixtapes = await getCollection('mixtapes');
 const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date);
+
+const EAGER_COUNT = 3;
 ---
 
 <Layout title="Reel42">
@@ -14,6 +16,7 @@ const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date);
       {
         mixtapes.map((mix, index) => {
           const inverseIndex = mixtapes.length - index;
+          const loadingMode = index < EAGER_COUNT ? 'eager' : 'lazy';
           return (
             <>
               <Card
@@ -28,6 +31,7 @@ const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date);
                 cover={mix.data.cover}
                 alt={mix.data.title}
                 id={mix.id}
+                loading={loadingMode}
               />
             </>
           );
