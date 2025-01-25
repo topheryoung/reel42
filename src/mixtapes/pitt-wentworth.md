@@ -5,19 +5,22 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/1hE6gBi88csVWoxpSF1DTu?si=17c12d2b4a8b4236',
   }
-cover: '../assets/pitt_wentworth.jpg'
-date: 20.01
+cover:
+  {
+    default: '../assets/pitt_wentworth.jpg',
+    retro: '../assets/retro/pitt_wentworth.png',
+  }
+date: 1401
 ---
 
 Track List
 
 - Ghinzu - The Dragster Wave
 - Soulwax - E Talking
-- Zornik - Scared of Yourself
-- Fightstar - Floods
 - Does It Offend You, Yeah? - With A Heavy Heart
-- Muse - Glorious
-- Vendetta Red - Vendetta Red Cried Rape On Their Date with Destiny
+- Mintzkov - Life After Fire
 - Klaxons - Magick
 - Millionaire - Body Experience Revue
-- Mutemath - Typical
+- The Horrors - Jack The Ripper
+- dEUS - Bad Timing
+- Zornik - This Song Is Just for You

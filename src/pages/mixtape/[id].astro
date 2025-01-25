@@ -25,7 +25,12 @@ const { title, cover, genre, href, date } = mixtape.data;
 <Layout title={`Reel42 | ${title}`} `>
   <main class="mixtape-container">
     <section class="mixtape-cover">
-      <Image src={cover} alt={title} class="cover-image" loading="eager" />
+      <Image
+        src={cover.default}
+        alt={title}
+        class="cover-image"
+        loading="eager"
+      />
     </section>
     <section class="mixtape-details">
       <a href="/" class="back-link">back</a>

@@ -1,0 +1,39 @@
+<button class="control-btn retro-mode-button" id="retroToggle">
+  retro (r)
+</button>
+
+<script is:inline>
+  const applyRetroMode = (isRetroMode) => {
+    const element = document.documentElement;
+    const button = document.getElementById('retroToggle');
+
+    if (isRetroMode) {
+      element.classList.add('retro-mode');
+      button.classList.add('is-active');
+    } else {
+      element.classList.remove('retro-mode');
+      button.classList.remove('is-active');
+    }
+
+    localStorage.setItem('retro-mode', isRetroMode);
+  };
+
+  const handleRetroToggle = () => {
+    const isCurrentlyRetroMode =
+      document.documentElement.classList.contains('retro-mode');
+    applyRetroMode(!isCurrentlyRetroMode);
+  };
+
+  const savedRetroMode = localStorage.getItem('retro-mode') === 'true';
+  applyRetroMode(savedRetroMode);
+
+  document
+    .getElementById('retroToggle')
+    .addEventListener('click', handleRetroToggle);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'r') {
+      handleRetroToggle();
+    }
+  });
+</script>

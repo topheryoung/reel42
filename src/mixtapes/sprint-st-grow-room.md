@@ -5,7 +5,11 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/4xOxSEE4bxzMlv1uNzJtPh?si=cc20fb9db29046eb',
   }
-cover: '../assets/sprint_st_grow_room.jpg'
+cover:
+  {
+    default: '../assets/spring_st_grow_room.jpg',
+    retro: '../assets/retro/spring_st_grow_room.png',
+  }
 date: 2102
 ---
 

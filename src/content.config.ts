@@ -10,7 +10,10 @@ const mixtapes = defineCollection({
       href: z.object({
         spotify: z.string().url(),
       }),
-      cover: image(),
+      cover: z.object({
+        default: image(),
+        retro: image(),
+      }),
       date: z.number(),
     }),
 });

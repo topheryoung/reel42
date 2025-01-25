@@ -5,7 +5,8 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/6vYbT1lvie7XeNXaMLTXdh?si=5d5b5d9647284eef',
   }
-cover: '../assets/loosies/2020.jpg'
+cover:
+  { default: '../assets/loosies/2020.jpg', retro: '../assets/loosies/2020.jpg' }
 date: 2012
 ---
 

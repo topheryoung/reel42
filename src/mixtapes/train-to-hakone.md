@@ -5,7 +5,11 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/6IdAjK3xGFKlhwuNik8KyI?si=2167a83ad64d4b54',
   }
-cover: '../assets/train_to_hakone.jpg'
+cover:
+  {
+    default: '../assets/train_to_hakone.jpg',
+    retro: '../assets/train_to_hakone.jpg',
+  }
 date: 2108
 ---
 

@@ -5,7 +5,7 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/6o5yhxh1uPPldDS1iovoJz?si=3e4e7fc410d14c69',
   }
-cover: '../assets/gloom.png'
+cover: { default: '../assets/gloom.png', retro: '../assets/gloom.png' }
 date: 2411
 ---
 

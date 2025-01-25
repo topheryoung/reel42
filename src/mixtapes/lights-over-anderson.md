@@ -5,7 +5,11 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/3PrZEeLZdgiio7GEyz095Z?si=dd73ea64d9c2422a',
   }
-cover: '../assets/lights_over_anderson.png'
+cover:
+  {
+    default: '../assets/lights_over_anderson.png',
+    retro: '../assets/lights_over_anderson.png',
+  }
 date: 2410
 ---
 

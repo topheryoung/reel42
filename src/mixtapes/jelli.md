@@ -5,7 +5,7 @@ href:
   {
     spotify: 'https://open.spotify.com/playlist/61yaEF7bgby3CYPYOspDhC?si=ee1fb4f040934fad',
   }
-cover: '../assets/merlot.png'
+cover: { default: '../assets/merlot.png', retro: '../assets/merlot.png' }
 date: 2203
 ---
 
