@@ -10,8 +10,6 @@ cover:
 date: 2312
 ---
 
-2023 was a very special year for me since we welcomed our first child and my family relocated to Barelona, Spain, abandoning the United States and our network. Being the throes of new parenthood and experiencing the heaviest culture shock of our lives, I had very little time to sit down and find/digest music. A lot of creature comfort music was played. Abbey Road was the soundtrack of my year. Fortunately (or unfortunately if you look at it from a different perspective), there wasn't a surplus of exiciting new music. Just felt like a slim year but there were some highlights.
-
 Track List
 
 - shame - Fingers of Steel

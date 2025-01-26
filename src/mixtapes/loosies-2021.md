@@ -10,8 +10,6 @@ cover:
 date: 2112
 ---
 
-The "hangover" year from 2020 and that whole COVID business. The year started out with a bizarre surprise from one of my favorite childhood bands, Weezer releasing a baroque influenced album. That essentially set the stage for my year in music. This year also saw the first opportunities to see live music again post lockdowns which felt strange since the phsycological damage of COVID could be felt even there and the music released this year (I think) reflects that feeling.
-
 Track List
 
 - King Gizzard & The Lizard Wizard - Shanghai

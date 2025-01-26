@@ -13,8 +13,6 @@ cover:
 date: 2412
 ---
 
-Holy new music, Batman. Unlike 2023, this year almost had too much good music. This list could have been triple the size but, keeping true to my self imposed 9 track model, this was the best of the best. Finally having been settled into a new country and my role as a father, I had more bandwidth to get back into some serious music listening. This year was like that 3rd chapter in a new book where things start to get going after a dodgy start where you aren't entirely sure you want to keep reading and the soundtrack to this feeling is all over these tracks.
-
 Track List
 
 - Ugly (UK) - The Wheel
