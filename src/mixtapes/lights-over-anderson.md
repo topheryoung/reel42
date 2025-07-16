@@ -7,8 +7,8 @@ href:
   }
 cover:
   {
-    default: '../assets/lights_over_anderson.png',
-    retro: '../assets/lights_over_anderson.png',
+    default: '../assets/lights_over_anderson.jpg',
+    retro: '../assets/lights_over_anderson.jpg',
   }
 date: 2410
 ---
