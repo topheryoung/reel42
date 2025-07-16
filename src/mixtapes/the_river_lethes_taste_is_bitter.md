@@ -6,10 +6,7 @@ href:
     spotify: 'https://open.spotify.com/playlist/6yRMm7QFSqPEhqf5t3QgXv?si=e94edda0ca524c8e',
   }
 cover:
-  {
-    default: '../assets/river_lethe.jpg',
-    retro: '../assets/briefcase_tacos.png',
-  }
+  { default: '../assets/river_lethe.jpg', retro: '../assets/river_lethe.jpg' }
 date: 2405
 ---
 
