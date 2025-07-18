@@ -20,7 +20,7 @@ Track List
 - Mildlife - Return To Centaurus
 - Yin Yin - The Year of the Rabbit
 - The Smile - Read The Room
-- Foxing - Greyhound
+- Foxing - Secret History
 - Agriculture - Living Is Easy
 - Islands - Drown A Fish
 - Metz - Light Your Way Home
