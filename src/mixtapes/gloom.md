@@ -3,6 +3,7 @@ title: 'GLOOM'
 genre: ['DPBM', 'Post-Metal']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/gloom/pl.u-XkD0vBJF2JqEAoE?l=en',
     spotify: 'https://open.spotify.com/playlist/6o5yhxh1uPPldDS1iovoJz?si=3e4e7fc410d14c69',
   }
 cover: { default: '../assets/gloom.jpg', retro: '../assets/gloom.jpg' }

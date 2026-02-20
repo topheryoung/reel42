@@ -3,6 +3,7 @@ title: 'Lights over Anderson'
 genre: ['Alt Country', 'Indie']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/lights-over-anderson/pl.u-MDAWvJjFAdrDm2D?l=en',
     spotify: 'https://open.spotify.com/playlist/3PrZEeLZdgiio7GEyz095Z?si=dd73ea64d9c2422a',
   }
 cover:

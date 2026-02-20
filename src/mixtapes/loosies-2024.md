@@ -3,6 +3,7 @@ title: '2024 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2024']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/2024/pl.u-qxylEeDu3MBkK8k?l=en',
     spotify: 'https://open.spotify.com/playlist/0q3snlOKMwKS4yoJeAfzEW?si=7f245b82c06c4cc8',
   }
 cover:

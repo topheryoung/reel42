@@ -3,6 +3,7 @@ title: 'Stalled at a Crossroad'
 genre: ['Rock', 'Brit-pop']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/stalled-at-a-crossroad/pl.u-EdAVz64uDAxlP9l?l=en',
     spotify: 'https://open.spotify.com/playlist/7ELEmMkIrl2kYOqVcK60GO?si=659ca0561020479b',
   }
 cover:

@@ -3,6 +3,7 @@ title: '2020 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2020']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/2020/pl.u-4JomaBmCJl5kWdk?l=en',
     spotify: 'https://open.spotify.com/playlist/6vYbT1lvie7XeNXaMLTXdh?si=5d5b5d9647284eef',
   }
 cover:

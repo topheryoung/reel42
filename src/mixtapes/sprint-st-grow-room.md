@@ -3,6 +3,7 @@ title: 'Sprint St Grow Room'
 genre: ['Indie Pop', 'Electronic Indie']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/spring-st-grow-room/pl.u-pMyl1pLSWel7gG7?l=en',
     spotify: 'https://open.spotify.com/playlist/4xOxSEE4bxzMlv1uNzJtPh?si=cc20fb9db29046eb',
   }
 cover:

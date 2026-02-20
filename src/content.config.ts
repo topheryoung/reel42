@@ -8,7 +8,9 @@ const mixtapes = defineCollection({
       title: z.string(),
       genre: z.array(z.string()),
       href: z.object({
-        spotify: z.string().url(),
+        apple: z.string().url().optional(),
+        youtube: z.string().url().optional(),
+        spotify: z.string().url().optional(),
       }),
       cover: z.object({
         default: image(),

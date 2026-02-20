@@ -17,10 +17,11 @@ const EAGER_COUNT = 3;
         mixtapes.map((mix, index) => {
           const inverseIndex = mixtapes.length - index;
           const loadingMode = index < EAGER_COUNT ? 'eager' : 'lazy';
+          const fetchPriority = index < EAGER_COUNT ? 'high' : undefined;
           return (
             <>
               <Card
-                href={mix.data.href.spotify}
+                href={mix.data.href}
                 title={mix.data.title}
                 genre={mix.data.genre}
                 displayID={buildDisplayId(
@@ -32,6 +33,7 @@ const EAGER_COUNT = 3;
                 alt={mix.data.title}
                 id={mix.id}
                 loading={loadingMode}
+                fetchpriority={fetchPriority}
               />
             </>
           );
@@ -43,7 +45,7 @@ const EAGER_COUNT = 3;
 
 <style>
   main {
-    margin: 64px auto;
+    margin: 1rem auto;
     padding: 1rem;
     color: white;
     font-size: 20px;

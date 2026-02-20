@@ -3,6 +3,7 @@ title: 'Two Pink Transformers'
 genre: ['Electro Funk', 'EDM']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/two-pink-transformers/pl.u-yZyVE33FdoxR7DR?l=en',
     spotify: 'https://open.spotify.com/playlist/1abMY7CMy7czckUX6TwuU6?si=4d0a683cc5f34472',
   }
 cover:

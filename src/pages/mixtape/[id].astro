@@ -42,10 +42,22 @@ const { title, cover, genre, href, date } = mixtape.data;
       <div class="md-content">
         <Content />
       </div>
-      <div>
-        <a href={href.spotify} class="listen-btn" target="_blank"
-          >Listen on Spotify
+      <div class="listen-btn-container">
+        {href.apple &&
+        <a href={href.apple} class="listen-btn" target="_blank">
+          Listen on Apple Music
         </a>
+        }
+        {href.youtube &&
+        <a href={href.youtube} class="listen-btn" target="_blank">
+          Listen on Youtube
+        </a>
+        }
+        {href.spotify &&
+        <a href={href.spotify} class="listen-btn" target="_blank">
+          Listen on Spotify
+        </a>
+        }
       </div>
     </section>
   </main>
@@ -56,8 +68,8 @@ const { title, cover, genre, href, date } = mixtape.data;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
-    margin: 0 auto;
-    padding: 64px;
+    margin: 1rem auto;
+    padding: 1rem;
     align-items: start;
   }
   .mixtape-cover {
@@ -113,6 +125,11 @@ const { title, cover, genre, href, date } = mixtape.data;
   ul {
     margin-top: 0;
     padding-left: 0;
+  }
+
+  .listen-btn-container {
+    display: flex;
+    gap: 12px;
   }
 
   .listen-btn {

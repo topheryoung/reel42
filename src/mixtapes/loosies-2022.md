@@ -3,6 +3,7 @@ title: '2022 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2022']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/2022/pl.u-zPyLl9RueLYaXEa?l=en',
     spotify: 'https://open.spotify.com/playlist/43z18rYrvKI2awNMOYb9lO?si=af651f6912654713',
   }
 cover:

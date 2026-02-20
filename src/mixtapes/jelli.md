@@ -3,6 +3,7 @@ title: 'Merlot Jelli'
 genre: ['Alt Rock', 'Indie Rock']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/merlot-jelli/pl.u-55D6XjqC6L0R4PR?l=en',
     spotify: 'https://open.spotify.com/playlist/61yaEF7bgby3CYPYOspDhC?si=ee1fb4f040934fad',
   }
 cover: { default: '../assets/merlot.jpg', retro: '../assets/merlot.jpg' }

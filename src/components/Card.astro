@@ -2,11 +2,15 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
+// Display size in px for grid cards (1–2 columns). Astro uses this to generate optimized srcset.
+const COVER_WIDTH = 900;
+const COVER_HEIGHT = 900;
+
 interface Props {
   title: string;
   id: string;
   displayID: string;
-  href: string;
+  href: { apple?: string; youtube?: string; spotify?: string };
   genre: string[];
   cover: {
     default: ImageMetadata;
@@ -14,6 +18,7 @@ interface Props {
   };
   alt: string;
   loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
 const {
@@ -24,6 +29,7 @@ const {
   cover,
   alt,
   loading = 'lazy',
+  fetchpriority,
 } = Astro.props;
 
 const formatGenres = (genres: string[]): string => genres.join(', ');
@@ -40,7 +46,19 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
     </div>
     <div class="cover-art">
       <div class="cover-frame">
-        <Image src={cover.default} alt={alt} class="cover" loading={loading} />
+        <Image
+          src={cover.default}
+          alt={alt}
+          class="cover"
+          width={COVER_WIDTH}
+          height={COVER_HEIGHT}
+          format="webp"
+          quality={90}
+          loading={loading}
+          decoding="async"
+          sizes="(max-width: 480px) 100vw, 50vw"
+          {...(fetchpriority && { fetchpriority })}
+        />
       </div>
     </div>
   </a>

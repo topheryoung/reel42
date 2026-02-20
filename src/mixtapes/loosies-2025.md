@@ -3,6 +3,7 @@ title: '2025 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2025']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/2025/pl.u-pMylgxvSWel7gG7?l=en',
     spotify: 'https://music.apple.com/es/playlist/2025/pl.u-pMylgxvSWel7gG7?l=en'
   }
 cover:

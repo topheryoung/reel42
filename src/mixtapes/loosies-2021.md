@@ -3,6 +3,7 @@ title: '2021 EOY Loosies'
 genre: ['Top Songs of the Year', 'EOY', '2021']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/2021/pl.u-zPyLl4LFeLYaXEa?l=en',
     spotify: 'https://open.spotify.com/playlist/0Fx18hqI4zGwHVV8iqXdtW?si=4231dcdc33a8410d',
   }
 cover:
@@ -18,6 +19,6 @@ Track List
 - Mild High Club - Dionysian State
 - Squid - G.S.K.
 - SPIRIT OF THE BEEHIVE - THE SERVER IS IMMERSED
-- Godspeed You! Black Emporer - Cliffs Gaze / cliffs' gaze at empty waters' rise
+-	Feu! Chatterton	- Un Monde Nouveau
 - KUNZITE - SATURN
 - Magdalena Bay - You Lose!

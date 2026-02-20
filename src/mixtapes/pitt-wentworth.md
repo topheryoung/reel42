@@ -3,6 +3,7 @@ title: 'Pitt & Wentworth'
 genre: ['Alternative Rock', 'Dance Rock']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/pitt-wentworth/pl.u-55D6ZNlH6L0R4PR?l=en',
     spotify: 'https://open.spotify.com/playlist/1hE6gBi88csVWoxpSF1DTu?si=17c12d2b4a8b4236',
   }
 cover:

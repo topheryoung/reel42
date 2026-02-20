@@ -3,6 +3,7 @@ title: 'The River Lethes Taste Is Bitter'
 genre: ['Classical', 'Minimalist']
 href:
   {
+    apple: 'https://music.apple.com/es/playlist/the-river-lethes-taste-is-bitter/pl.u-r2yB15ECRz81pd1?l=en',
     spotify: 'https://open.spotify.com/playlist/6yRMm7QFSqPEhqf5t3QgXv?si=e94edda0ca524c8e',
   }
 cover:
