@@ -26,6 +26,9 @@
   --card-bg: var(--grey-90);
   --card-accent: var(--grey-80);
   --primary-btn: var(--grey-20);
+
+  --mono: 'Space Mono', monospace;
+  --sans-serif: 'Hanken Grotesk Variable';
 }
 :root.dark {
   --bg: var(--grey-10);
@@ -42,12 +45,33 @@
   --primary-btn: var(--grey-80);
 }
 
+@font-face {
+  font-family: 'Hanken Grotesk Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/hanken-grotesk-variable.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Fallback';
+  src: local('Helvetica'), local('Arial');
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 html {
   background-color: var(--bg);
 }
 body {
-  font-family: 'Hanken Grotesk Variable', Helvetica, sans-serif;
-  margin: 24px;
+  font-family:
+    'Hanken Grotesk Variable', 'Hanken Fallback', Helvetica, sans-serif;
+  margin: 0;
 }
 html.mono {
   filter: grayscale(100%);

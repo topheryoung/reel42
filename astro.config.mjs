@@ -8,4 +8,7 @@ export default defineConfig({
   prefetch: true,
   output: 'server',
   adapter: vercel(),
+  experimental: {
+    svg: true,
+  },
 });
