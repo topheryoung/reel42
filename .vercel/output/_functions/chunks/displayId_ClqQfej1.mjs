@@ -1,8 +1,8 @@
 import { Traverse } from 'neotraverse/modern';
 import pLimit from 'p-limit';
 import { r as removeBase, i as isRemotePath, p as prependForwardSlash } from './path_I7weJv-K.mjs';
-import { V as VALID_INPUT_FORMATS } from './_astro_assets_CPlONmn1.mjs';
-import { A as AstroError, R as RenderUndefinedEntryError, c as createComponent, r as renderTemplate, u as unescapeHTML, U as UnknownContentCollectionError, f as renderUniqueStylesheet, g as renderScriptElement, h as createHeadAndContent, a as renderComponent } from './astro/server_D8TWmgWf.mjs';
+import { V as VALID_INPUT_FORMATS } from './_astro_assets_3vkGUGii.mjs';
+import { A as AstroError, U as UnknownContentCollectionError, R as RenderUndefinedEntryError, c as createComponent, r as renderTemplate, u as unescapeHTML, g as renderUniqueStylesheet, h as renderScriptElement, i as createHeadAndContent, a as renderComponent } from './astro/server_BDohZQyH.mjs';
 import 'kleur/colors';
 import * as devalue from 'devalue';
 
@@ -64,7 +64,7 @@ class ImmutableDataStore {
    */
   static async fromModule() {
     try {
-      const data = await import('./_astro_data-layer-content_C4QW-f6v.mjs');
+      const data = await import('./_astro_data-layer-content_CzcvEwnO.mjs');
       if (data.default instanceof Map) {
         return ImmutableDataStore.fromMap(data.default);
       }
@@ -127,7 +127,7 @@ function createGetCollection({
     } else if (collection in dataCollectionToEntryMap) {
       type = "data";
     } else if (store.hasCollection(collection)) {
-      const { default: imageAssetMap } = await import('./content-assets_CCpZhfhC.mjs');
+      const { default: imageAssetMap } = await import('./content-assets_Drf-Hazj.mjs');
       const result = [];
       for (const rawEntry of store.values(collection)) {
         const data = updateImageReferencesInData(rawEntry.data, rawEntry.filePath, imageAssetMap);
@@ -231,7 +231,7 @@ function createGetEntry({
         console.warn(`Entry ${collection} → ${lookupId} was not found.`);
         return;
       }
-      const { default: imageAssetMap } = await import('./content-assets_CCpZhfhC.mjs');
+      const { default: imageAssetMap } = await import('./content-assets_Drf-Hazj.mjs');
       entry2.data = updateImageReferencesInData(entry2.data, entry2.filePath, imageAssetMap);
       if (entry2.legacyId) {
         return { ...emulateLegacyEntry(entry2), collection };
@@ -277,9 +277,9 @@ function createGetEntry({
 }
 const CONTENT_LAYER_IMAGE_REGEX = /__ASTRO_IMAGE_="([^"]+)"/g;
 async function updateImageReferencesInBody(html, fileName) {
-  const { default: imageAssetMap } = await import('./content-assets_CCpZhfhC.mjs');
+  const { default: imageAssetMap } = await import('./content-assets_Drf-Hazj.mjs');
   const imageObjects = /* @__PURE__ */ new Map();
-  const { getImage } = await import('./_astro_assets_CPlONmn1.mjs').then(n => n._);
+  const { getImage } = await import('./_astro_assets_3vkGUGii.mjs').then(n => n._);
   for (const [_full, imagePath] of html.matchAll(CONTENT_LAYER_IMAGE_REGEX)) {
     try {
       const decodedImagePath = JSON.parse(imagePath.replaceAll("&#x22;", '"'));
@@ -507,4 +507,4 @@ function buildDisplayId(date, title, index) {
   return `${date}-${formattedTitle}-${formattedIndex}`;
 }
 
-export { getCollection as a, buildDisplayId as b, findIndex as f, getEntry as g, renderEntry as r };
+export { getEntry as a, buildDisplayId as b, findIndex as f, getCollection as g };

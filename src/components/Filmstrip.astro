@@ -1,0 +1,213 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { buildDisplayId } from '../utils/displayId';
+
+interface Props {
+  currentId: string;
+}
+
+const { currentId } = Astro.props;
+
+const entries = await getCollection('mixtapes');
+entries.sort((a, b) => a.data.date - b.data.date);
+
+const tapes = entries.map((entry, i) => ({
+  id: entry.id,
+  title: entry.data.title,
+  cover: entry.data.cover.default,
+  displayId: buildDisplayId(entry.data.date, entry.data.title, i + 1),
+  index: i + 1,
+}));
+
+const total = tapes.length;
+const activeIdx = tapes.findIndex((t) => t.id === currentId);
+const prev = tapes[(activeIdx - 1 + total) % total];
+const next = tapes[(activeIdx + 1) % total];
+---
+
+<section
+  class="filmstrip"
+  data-prev-href={`/mixtape/${prev.id}`}
+  data-next-href={`/mixtape/${next.id}`}
+>
+  <header class="filmstrip-header">
+    <span class="filmstrip-caption">Reel · {total} frames · scroll →</span>
+    <div class="filmstrip-nav">
+      <a href={`/mixtape/${prev.id}`} class="nav-btn" data-astro-prefetch>
+        ← {prev.displayId}
+      </a>
+      <a href={`/mixtape/${next.id}`} class="nav-btn" data-astro-prefetch>
+        {next.displayId} →
+      </a>
+    </div>
+  </header>
+  <div class="filmstrip-track">
+    <div class="filmstrip-row">
+      {
+        tapes.map((t) => (
+          <a
+            href={`/mixtape/${t.id}`}
+            class:list={['thumb', t.id === currentId && 'is-active']}
+            data-id={t.id}
+            data-astro-prefetch
+            aria-label={`${t.title} — ${t.displayId}`}
+          >
+            <Image
+              src={t.cover}
+              alt={t.title}
+              width={176}
+              height={176}
+              loading="lazy"
+            />
+            <span class="thumb-label">
+              {String(t.index).padStart(3, '0')}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .filmstrip {
+    border-top: 1px solid var(--card-accent);
+    background: var(--card-bg);
+    padding: 20px 0;
+    margin-top: 48px;
+  }
+  .filmstrip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    margin-bottom: 12px;
+  }
+  .filmstrip-caption {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--secondary-text);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .filmstrip-nav {
+    display: flex;
+    gap: 8px;
+  }
+  .nav-btn {
+    background: transparent;
+    color: var(--primary-text);
+    border: 1px solid var(--card-accent);
+    padding: 6px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .filmstrip-track {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .filmstrip-track::-webkit-scrollbar {
+    height: 8px;
+  }
+  .filmstrip-track::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .filmstrip-track::-webkit-scrollbar-thumb {
+    background: var(--card-accent);
+    border-radius: 4px;
+  }
+  .filmstrip-row {
+    display: flex;
+    gap: 6px;
+    padding: 0 60px;
+  }
+  .thumb {
+    flex: 0 0 auto;
+    width: 88px;
+    height: 88px;
+    position: relative;
+    border: 1px solid var(--card-accent);
+    opacity: 0.7;
+    transition:
+      opacity 0.15s,
+      border-color 0.15s;
+    overflow: hidden;
+    display: block;
+  }
+  .thumb :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb:hover {
+    opacity: 1;
+  }
+  .thumb.is-active {
+    opacity: 1;
+    border: 2px solid var(--primary);
+  }
+  .thumb-label {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: #fff;
+    mix-blend-mode: difference;
+  }
+
+  @media (max-width: 768px) {
+    .filmstrip-header,
+    .filmstrip-row {
+      padding: 0 24px;
+    }
+  }
+  @media (max-width: 480px) {
+    .filmstrip-header,
+    .filmstrip-row {
+      padding: 0 12px;
+    }
+  }
+</style>
+
+<script>
+  const filmstrip = document.querySelector<HTMLElement>('.filmstrip');
+  if (filmstrip) {
+    const track = filmstrip.querySelector<HTMLElement>('.filmstrip-track');
+    const active = filmstrip.querySelector<HTMLElement>('.thumb.is-active');
+    if (track && active) {
+      const containerW = track.clientWidth;
+      const elW = active.clientWidth;
+      track.scrollTo({
+        left: active.offsetLeft - containerW / 2 + elW / 2,
+        behavior: 'instant' as ScrollBehavior,
+      });
+    }
+
+    const prevHref = filmstrip.dataset.prevHref;
+    const nextHref = filmstrip.dataset.nextHref;
+    const onKey = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (
+        t &&
+        (t.tagName === 'INPUT' ||
+          t.tagName === 'TEXTAREA' ||
+          t.isContentEditable)
+      ) {
+        return;
+      }
+      if (e.key === 'ArrowLeft' && prevHref) window.location.href = prevHref;
+      if (e.key === 'ArrowRight' && nextHref) window.location.href = nextHref;
+    };
+    window.addEventListener('keydown', onKey);
+  }
+</script>

@@ -1,8 +1,8 @@
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, d as addAttribute, a as renderComponent, b as createAstro, F as Fragment } from '../chunks/astro/server_D8TWmgWf.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, a as renderComponent, d as createAstro, F as Fragment } from '../chunks/astro/server_BDohZQyH.mjs';
 import 'kleur/colors';
-import { a as getCollection, b as buildDisplayId } from '../chunks/displayId_Bz8tNYz8.mjs';
-import { $ as $$Layout } from '../chunks/Layout_KMIK8ZNh.mjs';
-import { $ as $$Picture } from '../chunks/_astro_assets_CPlONmn1.mjs';
+import { g as getCollection, b as buildDisplayId } from '../chunks/displayId_ClqQfej1.mjs';
+import { $ as $$Layout } from '../chunks/Layout_P2Uc3DSg.mjs';
+import { $ as $$Image } from '../chunks/_astro_assets_3vkGUGii.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
@@ -20,8 +20,8 @@ const $$Card = createComponent(($$result, $$props, $$slots) => {
     loading = "lazy",
     fetchpriority
   } = Astro2.props;
-  const formatGenres = (genres) => genres.join(", ");
-  return renderTemplate`${maybeRenderHead()}<div class="card-item" data-astro-cid-dohjnao5> <a${addAttribute(`/mixtape/${id}`, "href")} data-astro-prefetch data-astro-cid-dohjnao5> <h2 class="card-title" data-astro-cid-dohjnao5> ${title} </h2> <div class="card-details" data-astro-cid-dohjnao5> <h3 data-astro-cid-dohjnao5>${formatGenres(genre)}</h3> <h3 class="card-id" data-astro-cid-dohjnao5>${displayID}</h3> </div> <div class="cover-art" data-astro-cid-dohjnao5> <div class="cover-frame" data-astro-cid-dohjnao5> ${renderComponent($$result, "Picture", $$Picture, { "src": cover.default, "alt": alt, "class": "cover", "widths": [240, 360, 540, 720, 900], "sizes": "(max-width: 480px) 100vw, (max-width: 811px) 50vw, 33vw", "formats": ["avif", "webp"], "quality": 75, "loading": loading, "decoding": "async", ...fetchpriority && { fetchpriority }, "data-astro-cid-dohjnao5": true })} </div> </div> </a> </div> `;
+  const formatGenres = (genres) => genres[0];
+  return renderTemplate`${maybeRenderHead()}<div class="card-item" data-astro-cid-dohjnao5> <a${addAttribute(`/mixtape/${id}`, "href")} data-astro-prefetch data-astro-cid-dohjnao5> <div class="cover-frame" data-astro-cid-dohjnao5> <!-- <h3 class="card-id">{displayID}</h3> --> ${renderComponent($$result, "Image", $$Image, { "src": cover.default, "alt": alt, "class": "cover", "widths": [240, 360, 540, 720, 900], "sizes": "(max-width: 480px) 100vw, (max-width: 811px) 50vw, 33vw", "quality": 75, "loading": loading, "decoding": "async", ...fetchpriority && { fetchpriority }, "data-astro-cid-dohjnao5": true })} </div> <div class="card-details" data-astro-cid-dohjnao5> <h2 class="card-title" data-astro-cid-dohjnao5> ${title} </h2> <h3 data-astro-cid-dohjnao5>${formatGenres(genre)}</h3> </div> </a> </div> `;
 }, "/Users/christopheryoung/Development/reel42/src/components/Card.astro", void 0);
 
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {

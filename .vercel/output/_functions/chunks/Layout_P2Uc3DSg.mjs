@@ -1,7 +1,6 @@
-import { c as createComponent, r as renderTemplate, a as renderComponent, i as renderScript, b as createAstro, m as maybeRenderHead, d as addAttribute, j as renderHead, k as renderSlot } from './astro/server_D8TWmgWf.mjs';
+import { c as createComponent, r as renderTemplate, a as renderComponent, e as renderScript, d as createAstro, m as maybeRenderHead, b as addAttribute, j as renderHead, k as renderSlot } from './astro/server_BDohZQyH.mjs';
 import 'kleur/colors';
 /* empty css                         */
-import { c as $$Image } from './_astro_assets_CPlONmn1.mjs';
 import 'clsx';
 
 const $$Astro$2 = createAstro();
@@ -13,25 +12,17 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "vercel-analytics", "vercel-analytics", { "data-props": propsStr, "data-params": paramsStr, "data-pathname": Astro2.url.pathname })} ${renderScript($$result, "/Users/christopheryoung/Development/reel42/node_modules/@vercel/analytics/dist/astro/index.astro?astro&type=script&index=0&lang.ts")}`;
 }, "/Users/christopheryoung/Development/reel42/node_modules/@vercel/analytics/dist/astro/index.astro", void 0);
 
-const Reel42 = new Proxy({"src":"/_astro/reel42.D7IB8qnc.svg","width":66,"height":24,"format":"svg"}, {
-						get(target, name, receiver) {
-							if (name === 'clone') {
-								return structuredClone(target);
-							}
-							if (name === 'fsPath') {
-								return "/Users/christopheryoung/Development/reel42/src/icons/reel42.svg";
-							}
-							
-							return target[name];
-						}
-					});
+const $$Logo = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${maybeRenderHead()}<a class="logo" href="/" data-astro-prefetch data-astro-cid-tvrurpns>
+Reel<span class="fortyTwo" data-astro-cid-tvrurpns>042</span> </a> `;
+}, "/Users/christopheryoung/Development/reel42/src/components/Logo.astro", void 0);
 
-var __freeze$1 = Object.freeze;
-var __defProp$1 = Object.defineProperty;
-var __template$1 = (cooked, raw) => __freeze$1(__defProp$1(cooked, "raw", { value: __freeze$1(cooked.slice()) }));
-var _a$1;
+var __freeze$2 = Object.freeze;
+var __defProp$2 = Object.defineProperty;
+var __template$2 = (cooked, raw) => __freeze$2(__defProp$2(cooked, "raw", { value: __freeze$2(cooked.slice()) }));
+var _a$2;
 const $$Dark = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate(_a$1 || (_a$1 = __template$1(["", `<button class="control-btn dark-mode-button" id="themeToggle">
+  return renderTemplate(_a$2 || (_a$2 = __template$2(["", `<button class="control-btn dark-mode-button" id="themeToggle">
 dark <span class="keyboard-shortcut">(d)</span> </button> <script>
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -79,12 +70,12 @@ dark <span class="keyboard-shortcut">(d)</span> </button> <script>
 <\/script>`])), maybeRenderHead());
 }, "/Users/christopheryoung/Development/reel42/src/components/modes/Dark.astro", void 0);
 
-var __freeze = Object.freeze;
-var __defProp = Object.defineProperty;
-var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
-var _a;
+var __freeze$1 = Object.freeze;
+var __defProp$1 = Object.defineProperty;
+var __template$1 = (cooked, raw) => __freeze$1(__defProp$1(cooked, "raw", { value: __freeze$1(cooked.slice()) }));
+var _a$1;
 const $$Mono = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate(_a || (_a = __template(["", `<button class="control-btn mono-mode-button" id="monoToggle">
+  return renderTemplate(_a$1 || (_a$1 = __template$1(["", `<button class="control-btn mono-mode-button" id="monoToggle">
 mono <span class="keyboard-shortcut">(m)</span> </button> <script>
   const applyMonoMode = (isMono) => {
     const element = document.documentElement;
@@ -121,17 +112,67 @@ mono <span class="keyboard-shortcut">(m)</span> </button> <script>
 <\/script>`])), maybeRenderHead());
 }, "/Users/christopheryoung/Development/reel42/src/components/modes/Mono.astro", void 0);
 
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$Retro = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate(_a || (_a = __template(["", `<button class="control-btn retro-mode-button" id="retroToggle">
+retro (r)
+</button> <script>
+  const applyRetroMode = (isRetroMode) => {
+    const element = document.documentElement;
+    const button = document.getElementById('retroToggle');
+
+    if (isRetroMode) {
+      element.classList.add('retro-mode');
+      button.classList.add('is-active');
+    } else {
+      element.classList.remove('retro-mode');
+      button.classList.remove('is-active');
+    }
+
+    localStorage.setItem('retro-mode', isRetroMode);
+  };
+
+  const handleRetroToggle = () => {
+    const isCurrentlyRetroMode =
+      document.documentElement.classList.contains('retro-mode');
+    applyRetroMode(!isCurrentlyRetroMode);
+  };
+
+  const savedRetroMode = localStorage.getItem('retro-mode') === 'true';
+  applyRetroMode(savedRetroMode);
+
+  document
+    .getElementById('retroToggle')
+    .addEventListener('click', handleRetroToggle);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 'r') {
+      handleRetroToggle();
+    }
+  });
+<\/script>`])), maybeRenderHead());
+}, "/Users/christopheryoung/Development/reel42/src/components/modes/Retro.astro", void 0);
+
 const $$Astro$1 = createAstro();
 const $$Header = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Header;
   const isAboutPage = Astro2.url.pathname === "/about";
-  return renderTemplate`${maybeRenderHead()}<header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <a${addAttribute(isAboutPage ? "/" : "/about", "href")} data-astro-prefetch data-astro-cid-3ef6ksr2> ${isAboutPage ? "back" : "about"} </a> </nav> <div class="logo" data-astro-cid-3ef6ksr2> <a href="/" data-astro-prefetch data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Image", $$Image, { "src": Reel42, "alt": "Reel 42 home", "loading": "eager", "data-astro-cid-3ef6ksr2": true })} </a> </div> <div class="controls" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Dark", $$Dark, { "data-astro-cid-3ef6ksr2": true })} ${renderComponent($$result, "Mono", $$Mono, { "data-astro-cid-3ef6ksr2": true })} </div> </header>  `;
+  return renderTemplate`${maybeRenderHead()}<header data-astro-cid-3ef6ksr2> <div class="logo" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Logo", $$Logo, { "data-astro-cid-3ef6ksr2": true })} </div> <nav data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(!isAboutPage ? "active" : "", "class")} data-astro-prefetch data-astro-cid-3ef6ksr2>
+Mixtapes
+</a> <a href="/about"${addAttribute(isAboutPage ? "active" : "", "class")} data-astro-prefetch data-astro-cid-3ef6ksr2>
+About
+</a> </nav> <div class="controls" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Dark", $$Dark, { "data-astro-cid-3ef6ksr2": true })} ${renderComponent($$result, "Mono", $$Mono, { "data-astro-cid-3ef6ksr2": true })} ${renderComponent($$result, "Retro", $$Retro, { "data-astro-cid-3ef6ksr2": true })} </div> </header>  `;
 }, "/Users/christopheryoung/Development/reel42/src/components/Header.astro", void 0);
 
 const $$Footer = createComponent(($$result, $$props, $$slots) => {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return renderTemplate`${maybeRenderHead()}<footer data-astro-cid-sz7xmlte> <div class="copyright" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy;</p> <p style="color: var(--primary-text)" data-astro-cid-sz7xmlte>${currentYear}</p> </div> <div class="colophon" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>Designed and Developed in BCN</p> <a style="color: var(--primary-text)" href="mailto:info@reel42.com" data-astro-cid-sz7xmlte>info@reel42.com</a> </div> </footer> `;
+  return renderTemplate`${maybeRenderHead()}<footer data-astro-cid-sz7xmlte> <div class="copyright" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy;</p> <p style="color: var(--primary-text)" data-astro-cid-sz7xmlte>${currentYear}</p> </div> <div class="end-of-reel" data-astro-cid-sz7xmlte> <button class="control-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-sz7xmlte>
+Rewind Reel
+</button> </div> <div class="colophon" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>Designed and Developed in BCN</p> <a style="color: var(--primary-text)" href="mailto:info@reel42.com" data-astro-cid-sz7xmlte>info@reel42.com</a> </div> </footer> `;
 }, "/Users/christopheryoung/Development/reel42/src/components/Footer.astro", void 0);
 
 const $$Astro = createAstro();

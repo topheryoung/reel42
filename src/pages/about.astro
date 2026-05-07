@@ -5,9 +5,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Reel42 | About">
   <main>
     <h1>
-      About Reel<span style="color: var(--tertiary)">4</span><span
-        style="color: var(--primary)">2</span
-      >
+      About Reel<span class="fortyTwo">042</span>
     </h1>
     <hr />
     <div class="content">
@@ -64,14 +62,18 @@ import Layout from '../layouts/Layout.astro';
   }
   h1 {
     text-transform: uppercase;
-    font-size: clamp(8vw, 13vw, 20vw);
+    font-size: 11.5vw;
     color: var(--header-text);
     margin: 0;
     line-height: 1.2;
     text-align: center;
     width: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    white-space: nowrap;
+  }
+  .fortyTwo {
+    font-weight: 400;
+    font-family: var(--mono);
+    color: var(--primary);
   }
   hr {
     width: 180px;

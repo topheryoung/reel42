@@ -1,5 +1,5 @@
 import { i as isRemotePath, j as joinPaths } from './path_I7weJv-K.mjs';
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, l as MissingImageDimension, n as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, o as UnsupportedImageConversion, p as NoImageMetadata, q as FailedToFetchRemoteImageDimensions, s as ExpectedImageOptions, t as ExpectedNotESMImage, v as InvalidImageService, w as toStyleString, c as createComponent, x as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, d as addAttribute, y as spreadAttributes, b as createAstro } from './astro/server_D8TWmgWf.mjs';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, l as MissingImageDimension, n as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, o as UnsupportedImageConversion, p as NoImageMetadata, q as FailedToFetchRemoteImageDimensions, s as ExpectedImageOptions, t as ExpectedNotESMImage, v as InvalidImageService, w as toStyleString, c as createComponent, x as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, b as addAttribute, y as spreadAttributes, d as createAstro } from './astro/server_BDohZQyH.mjs';
 import * as mime from 'mrmime';
 /* empty css                           */
 import 'clsx';
@@ -1251,7 +1251,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_DSaVxD_L.mjs'
+      './sharp_CZYjlAr5.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -1528,7 +1528,6 @@ const imageConfig = {"endpoint":{"route":"/_image"},"service":{"entrypoint":"ast
 const _astro_assets = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   Image: $$Image,
-  Picture: $$Picture,
   getConfiguredImageService,
   getImage,
   imageConfig,
@@ -1536,4 +1535,4 @@ const _astro_assets = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.definePrope
   isLocalService
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { $$Picture as $, VALID_INPUT_FORMATS as V, _astro_assets as _, isRemoteAllowed as a, baseService as b, $$Image as c, getConfiguredImageService as g, imageConfig as i, parseQuality as p };
+export { $$Image as $, VALID_INPUT_FORMATS as V, _astro_assets as _, isRemoteAllowed as a, baseService as b, getConfiguredImageService as g, imageConfig as i, parseQuality as p };
