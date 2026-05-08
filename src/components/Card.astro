@@ -46,6 +46,16 @@ const formatGenres = (genres: string[]): string => genres[0];
         decoding="async"
         {...fetchpriority && { fetchpriority }}
       />
+      <Image
+        src={cover.retro}
+        alt={alt}
+        class="retro-cover"
+        widths={[240, 360, 540, 720, 900]}
+        sizes="(max-width: 480px) 100vw, (max-width: 811px) 50vw, 33vw"
+        quality={75}
+        loading={loading}
+        decoding="async"
+      />
     </div>
     <div class="card-details">
       <h2 class="card-title">

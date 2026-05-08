@@ -1,12 +1,12 @@
-import { c as createComponent, r as renderTemplate, a as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BDohZQyH.mjs';
+import { c as createComponent, r as renderTemplate, a as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_D8TWmgWf.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_P2Uc3DSg.mjs';
+import { $ as $$Layout } from '../chunks/Layout_CHdTI61d.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
 const $$About = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Reel42 | About", "data-astro-cid-kh7btl4r": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main data-astro-cid-kh7btl4r> <h1 data-astro-cid-kh7btl4r>
-About Reel<span style="color: var(--tertiary)" data-astro-cid-kh7btl4r>4</span><span style="color: var(--primary)" data-astro-cid-kh7btl4r>2</span> </h1> <hr data-astro-cid-kh7btl4r> <div class="content" data-astro-cid-kh7btl4r> <p data-astro-cid-kh7btl4r>
+About Reel<span class="fortyTwo" data-astro-cid-kh7btl4r>042</span> </h1> <hr data-astro-cid-kh7btl4r> <div class="content" data-astro-cid-kh7btl4r> <p data-astro-cid-kh7btl4r>
 Reel42 is an experimental, creative playground made for the sole purpose
         of exploring the collision between two of my favorite hobbies: music and
         art. This idea was born out of my nostalgia of burning CDs back before

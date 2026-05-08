@@ -16,6 +16,7 @@ const tapes = entries.map((entry, i) => ({
   id: entry.id,
   title: entry.data.title,
   cover: entry.data.cover.default,
+  retroCover: entry.data.cover.retro,
   displayId: buildDisplayId(entry.data.date, entry.data.title, i + 1),
   index: i + 1,
 }));
@@ -56,6 +57,15 @@ const next = tapes[(activeIdx + 1) % total];
             <Image
               src={t.cover}
               alt={t.title}
+              class="cover"
+              width={176}
+              height={176}
+              loading="lazy"
+            />
+            <Image
+              src={t.retroCover}
+              alt={t.title}
+              class="retro-cover"
               width={176}
               height={176}
               loading="lazy"
@@ -147,6 +157,9 @@ const next = tapes[(activeIdx + 1) % total];
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+  .thumb :global(.retro-cover) {
+    display: none;
   }
   .thumb:hover {
     opacity: 1;

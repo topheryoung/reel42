@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/briefcase_tacos.jpg',
-    retro: '../assets/briefcase_tacos.jpg',
+    retro: '../assets/retro/briefcase_tacos.png',
   }
 date: 2210
 ---

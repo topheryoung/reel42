@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/spring_st_grow_room.jpg',
-    retro: '../assets/spring_st_grow_room.jpg',
+    retro: '../assets/retro/spring_st_grow_room.png',
   }
 date: 2102
 ---

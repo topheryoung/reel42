@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/pitt_wentworth.jpg',
-    retro: '../assets/pitt_wentworth.jpg',
+    retro: '../assets/retro/pitt_wentworth.png',
   }
 date: 1401
 ---

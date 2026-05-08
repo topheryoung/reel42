@@ -23,86 +23,99 @@ const displayId = buildDisplayId(date, title, entryIndex);
 const year = 2000 + Math.floor(date / 100);
 
 const tracks = parseTracks(mixtape.body ?? '');
-const half = Math.ceil(tracks.length / 2);
-const sideA = tracks.slice(0, half);
-const sideB = tracks.slice(half);
+// const half = Math.ceil(tracks.length / 2);
+// const sideA = tracks.slice(0, half);
+// const sideB = tracks.slice(half);
 ---
 
 <Layout title={`Reel42 | ${title}`}>
   <main class="detail">
     <nav class="breadcrumb">
-      <a href="/" data-astro-prefetch>← Index</a>
+      <a href="/" data-astro-prefetch>← Mixtapes</a>
       <span class="sep">/</span>
-      <span class="current">{displayId}</span>
+      <span class="current">{title}</span>
     </nav>
 
     <section class="hero">
       <div class="cover-frame">
-        <Image src={cover.default} alt={title} class="cover-image" loading="eager" />
+        <Image src={cover.default} alt={title} class="cover" loading="eager" />
+        <Image
+          src={cover.retro}
+          alt={title}
+          class="retro-cover"
+          loading="eager"
+        />
       </div>
       <div class="meta">
-        <div class="eyebrow">Frame · {displayId}</div>
+        <div class="eyebrow">{displayId}</div>
         <h1 class="title">{title}</h1>
         <dl class="info">
           <dt>Year</dt><dd>{year}</dd>
           <dt>Genre</dt><dd>{genre.join(', ')}</dd>
-          <dt>Tracks</dt><dd>{tracks.length}</dd>
-          <dt>Runtime</dt><dd>—</dd>
+          <!-- <dt>Tracks</dt><dd>{tracks.length}</dd>
+          <dt>Runtime</dt><dd>—</dd> -->
         </dl>
+        <section class:list={['tracklist']}>
+          <div class="side">
+            <div class="side-label">Tracklist</div>
+            <ol>
+              {
+                tracks.map((t, i) => (
+                  <li>
+                    <span class="num">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="track">
+                      <strong>{t.title}</strong>
+                      {t.artist && <span class="artist"> — {t.artist}</span>}
+                    </span>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+        </section>
+        <div class="listen-label">Listen</div>
         <div class="listen">
-          {href.apple && (
-            <a href={href.apple} class="listen-btn" target="_blank" rel="noopener">
-              Apple Music
-            </a>
-          )}
-          {href.spotify && (
-            <a href={href.spotify} class="listen-btn" target="_blank" rel="noopener">
-              Spotify
-            </a>
-          )}
-          {href.youtube && (
-            <a href={href.youtube} class="listen-btn" target="_blank" rel="noopener">
-              YouTube
-            </a>
-          )}
+          {
+            href.apple && (
+              <a
+                href={href.apple}
+                class="listen-btn"
+                target="_blank"
+                rel="noopener"
+              >
+                Apple Music
+              </a>
+            )
+          }
+          {
+            href.spotify && (
+              <a
+                href={href.spotify}
+                class="listen-btn"
+                target="_blank"
+                rel="noopener"
+              >
+                Spotify
+              </a>
+            )
+          }
+          {
+            href.youtube && (
+              <a
+                href={href.youtube}
+                class="listen-btn"
+                target="_blank"
+                rel="noopener"
+              >
+                YouTube
+              </a>
+            )
+          }
         </div>
       </div>
     </section>
 
-    <section class:list={['tracklist', sideB.length === 0 && 'single']}>
-      <div class="side">
-        <div class="side-label">Side A — Tracklist</div>
-        <ol>
-          {sideA.map((t, i) => (
-            <li>
-              <span class="num">{String(i + 1).padStart(2, '0')}</span>
-              <span class="track">
-                <strong>{t.title}</strong>
-                {t.artist && <span class="artist"> — {t.artist}</span>}
-              </span>
-            </li>
-          ))}
-        </ol>
-      </div>
-      {sideB.length > 0 && (
-        <div class="side">
-          <div class="side-label">Side B — Tracklist</div>
-          <ol>
-            {sideB.map((t, i) => (
-              <li>
-                <span class="num">{String(half + i + 1).padStart(2, '0')}</span>
-                <span class="track">
-                  <strong>{t.title}</strong>
-                  {t.artist && <span class="artist"> — {t.artist}</span>}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      )}
-    </section>
-
-    <Filmstrip currentId={id} />
+    <!-- <Filmstrip currentId={id} /> -->
   </main>
 </Layout>
 
@@ -140,7 +153,6 @@ const sideB = tracks.slice(half);
     gap: 56px;
     padding: 56px 60px 40px;
     align-items: center;
-    border-bottom: 1px solid var(--card-accent);
   }
   .cover-frame {
     aspect-ratio: 1 / 1;
@@ -148,11 +160,14 @@ const sideB = tracks.slice(half);
     outline: 1px solid var(--card-accent);
     overflow: hidden;
   }
-  .cover-frame :global(.cover-image) {
+  .cover-frame :global(.cover),
+  .cover-frame :global(.retro-cover) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+  }
+  .cover-frame :global(.retro-cover) {
+    display: none;
   }
   .meta {
     display: flex;
@@ -202,7 +217,6 @@ const sideB = tracks.slice(half);
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    padding-top: 6px;
   }
   .listen-btn {
     font-family: var(--mono);
@@ -221,9 +235,8 @@ const sideB = tracks.slice(half);
 
   .tracklist {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 56px;
-    padding: 48px 60px;
   }
   .tracklist.single {
     grid-template-columns: 1fr;
@@ -235,6 +248,15 @@ const sideB = tracks.slice(half);
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-accent);
+  }
+  .listen-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--secondary-text);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--card-accent);
   }

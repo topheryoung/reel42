@@ -7,7 +7,7 @@ href:
     youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rW-tUbdmnPcqDNCdIlraT-n&si=3Qy1hNjyzWUfOZJ2',
     spotify: 'https://open.spotify.com/playlist/4dN66AXFWDcb1NfK4zps9o?si=ad9d895f6a5e4053',
   }
-cover: { default: '../assets/atmos.jpg', retro: '../assets/atmos.jpg' }
+cover: { default: '../assets/atmos.jpg', retro: '../assets/retro/atmos.png' }
 date: 2507
 ---
 

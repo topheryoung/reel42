@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/tempests_of_titan.jpg',
-    retro: '../assets/tempests_of_titan.jpg',
+    retro: '../assets/retro/tempests_of_titan.png',
   }
 date: 2306
 ---

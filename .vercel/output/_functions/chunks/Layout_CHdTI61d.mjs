@@ -1,11 +1,11 @@
-import { c as createComponent, r as renderTemplate, a as renderComponent, e as renderScript, d as createAstro, m as maybeRenderHead, b as addAttribute, j as renderHead, k as renderSlot } from './astro/server_BDohZQyH.mjs';
+import { c as createComponent, r as renderTemplate, a as renderComponent, i as renderScript, b as createAstro, m as maybeRenderHead, d as addAttribute, j as renderHead, k as renderSlot } from './astro/server_D8TWmgWf.mjs';
 import 'kleur/colors';
 /* empty css                         */
 import 'clsx';
 
-const $$Astro$2 = createAstro();
+const $$Astro$3 = createAstro();
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Index;
   const propsStr = JSON.stringify(Astro2.props);
   const paramsStr = JSON.stringify(Astro2.params);
@@ -156,9 +156,9 @@ retro (r)
 <\/script>`])), maybeRenderHead());
 }, "/Users/christopheryoung/Development/reel42/src/components/modes/Retro.astro", void 0);
 
-const $$Astro$1 = createAstro();
+const $$Astro$2 = createAstro();
 const $$Header = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Header;
   const isAboutPage = Astro2.url.pathname === "/about";
   return renderTemplate`${maybeRenderHead()}<header data-astro-cid-3ef6ksr2> <div class="logo" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Logo", $$Logo, { "data-astro-cid-3ef6ksr2": true })} </div> <nav data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(!isAboutPage ? "active" : "", "class")} data-astro-prefetch data-astro-cid-3ef6ksr2>
@@ -168,11 +168,15 @@ About
 </a> </nav> <div class="controls" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Dark", $$Dark, { "data-astro-cid-3ef6ksr2": true })} ${renderComponent($$result, "Mono", $$Mono, { "data-astro-cid-3ef6ksr2": true })} ${renderComponent($$result, "Retro", $$Retro, { "data-astro-cid-3ef6ksr2": true })} </div> </header>  `;
 }, "/Users/christopheryoung/Development/reel42/src/components/Header.astro", void 0);
 
+const $$Astro$1 = createAstro();
 const $$Footer = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$Footer;
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return renderTemplate`${maybeRenderHead()}<footer data-astro-cid-sz7xmlte> <div class="copyright" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy;</p> <p style="color: var(--primary-text)" data-astro-cid-sz7xmlte>${currentYear}</p> </div> <div class="end-of-reel" data-astro-cid-sz7xmlte> <button class="control-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-sz7xmlte>
+  const isIndex = Astro2.url.pathname === "/";
+  return renderTemplate`${maybeRenderHead()}<footer data-astro-cid-sz7xmlte> <div class="copyright" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy;</p> <p style="color: var(--primary-text)" data-astro-cid-sz7xmlte>${currentYear}</p> </div> ${isIndex && renderTemplate`<div class="end-of-reel" data-astro-cid-sz7xmlte> <button class="control-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-sz7xmlte>
 Rewind Reel
-</button> </div> <div class="colophon" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>Designed and Developed in BCN</p> <a style="color: var(--primary-text)" href="mailto:info@reel42.com" data-astro-cid-sz7xmlte>info@reel42.com</a> </div> </footer> `;
+</button> </div>`} <div class="colophon" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>Designed and Developed in BCN</p> <a style="color: var(--primary-text)" href="mailto:info@reel42.com" data-astro-cid-sz7xmlte>info@reel42.com</a> </div> </footer> `;
 }, "/Users/christopheryoung/Development/reel42/src/components/Footer.astro", void 0);
 
 const $$Astro = createAstro();
