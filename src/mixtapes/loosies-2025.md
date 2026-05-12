@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/loosies/2025.jpg',
-    retro: '../assets/loosies/2025.jpg',
+    retro: '../assets/retro/loosies/2025.png',
   }
 date: 2512
 ---

@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/train_to_hakone.jpg',
-    retro: '../assets/train_to_hakone.jpg',
+    retro: '../assets/retro/train_to_hakone.png',
   }
 date: 2108
 ---

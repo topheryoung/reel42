@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/playa_fortuna.jpg',
-    retro: '../assets/playa_fortuna.jpg',
+    retro: '../assets/retro/playa_fortuna.png',
   }
 date: 2504
 ---

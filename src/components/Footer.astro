@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+const isIndex = Astro.url.pathname === '/';
 ---
 
 <footer>
@@ -7,6 +8,18 @@ const currentYear = new Date().getFullYear();
     <p>&copy;</p>
     <p style="color: var(--primary-text)">{currentYear}</p>
   </div>
+  {
+    isIndex && (
+      <div class="end-of-reel">
+        <button
+          class="control-btn"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          Rewind Reel
+        </button>
+      </div>
+    )
+  }
   <div class="colophon">
     <p>Designed and Developed in BCN</p>
     <a style="color: var(--primary-text)" href="mailto:info@reel42.com"
@@ -18,13 +31,29 @@ const currentYear = new Date().getFullYear();
 <style>
   footer {
     border-top: 1px solid var(--card-accent);
-    padding-top: 12px;
-    margin: 0 24px;
+    padding: 12px 0 36px;
+    margin: 0 36px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+  }
+  .copyright {
+    grid-column: 1;
+  }
+  .end-of-reel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-row: 1;
+    grid-column: 2;
+    place-content: center;
+  }
+  .colophon {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
   }
   p {
     color: var(--secondary-text);
@@ -35,8 +64,5 @@ const currentYear = new Date().getFullYear();
     text-decoration: none;
     color: var(--primary-text);
     font-size: 12px;
-  }
-  svg path {
-    fill: var(--primary-text);
   }
 </style>

@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/two_pink_transformers.jpg',
-    retro: '../assets/two_pink_transformers.jpg',
+    retro: '../assets/retro/two_pink_transformers.png',
   }
 date: 2002
 ---

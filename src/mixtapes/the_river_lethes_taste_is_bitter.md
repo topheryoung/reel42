@@ -7,7 +7,10 @@ href:
     spotify: 'https://open.spotify.com/playlist/6yRMm7QFSqPEhqf5t3QgXv?si=e94edda0ca524c8e',
   }
 cover:
-  { default: '../assets/river_lethe.jpg', retro: '../assets/river_lethe.jpg' }
+  {
+    default: '../assets/river_lethe.jpg',
+    retro: '../assets/retro/river_lethe.png',
+  }
 date: 2405
 ---
 

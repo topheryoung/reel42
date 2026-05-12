@@ -2,10 +2,6 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-// Display size in px for grid cards (1–2 columns). Astro uses this to generate optimized srcset.
-const COVER_WIDTH = 900;
-const COVER_HEIGHT = 900;
-
 interface Props {
   title: string;
   id: string;
@@ -32,57 +28,76 @@ const {
   fetchpriority,
 } = Astro.props;
 
-const formatGenres = (genres: string[]): string => genres.join(', ');
+const formatGenres = (genres: string[]): string => genres[0];
 ---
 
 <div class="card-item">
   <a href={`/mixtape/${id}`} data-astro-prefetch>
-    <h2 class="card-title">
-      {title}
-    </h2>
-    <div class="card-details">
-      <h3>{formatGenres(genre)}</h3>
-      <h3 class="card-id">{displayID}</h3>
+    <div class="cover-frame">
+      <!-- <h3 class="card-id">{displayID}</h3> -->
+      <Image
+        src={cover.default}
+        alt={alt}
+        class="cover"
+        widths={[240, 360, 540, 720, 900]}
+        sizes="(max-width: 480px) 100vw, (max-width: 811px) 50vw, 33vw"
+        quality={75}
+        loading={loading}
+        decoding="async"
+        {...fetchpriority && { fetchpriority }}
+      />
+      <Image
+        src={cover.retro}
+        alt={alt}
+        class="retro-cover"
+        widths={[240, 360, 540, 720, 900]}
+        sizes="(max-width: 480px) 100vw, (max-width: 811px) 50vw, 33vw"
+        quality={75}
+        loading={loading}
+        decoding="async"
+      />
     </div>
-    <div class="cover-art">
-      <div class="cover-frame">
-        <Image
-          src={cover.default}
-          alt={alt}
-          class="cover"
-          width={COVER_WIDTH}
-          height={COVER_HEIGHT}
-          format="webp"
-          quality={90}
-          loading={loading}
-          decoding="async"
-          sizes="(max-width: 480px) 100vw, 50vw"
-          {...(fetchpriority && { fetchpriority })}
-        />
-      </div>
+    <div class="card-details">
+      <h2 class="card-title">
+        {title}
+      </h2>
+      <h3>{formatGenres(genre)}</h3>
     </div>
   </a>
 </div>
 
 <style>
-  .card-item {
-    border-top: 1px solid var(--card-accent);
-  }
   a {
     text-decoration: none;
     color: transparent;
   }
+  .cover-frame {
+    position: relative;
+    background: var(--secondary-text);
+    display: flex;
+    aspect-ratio: 1;
+    /* &:hover {
+      outline: 1px solid var(--bg);
+      outline-offset: -12px;
+      .card-id {
+        display: block;
+      }
+    } */
+  }
   .card-title {
     color: var(--primary-text);
-    font-size: 22px;
-    margin-bottom: 6px;
-    margin-top: 12px;
+    font-size: 18px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    line-height: 22px;
   }
   .card-details {
     color: var(--secondary-text);
     display: flex;
+    color: var(--secondary-text);
     justify-content: space-between;
-    margin: 6px auto 12px;
+    align-items: flex-end;
+    margin: 0 auto 12px;
   }
   .card-details h3 {
     margin: 0;
@@ -90,20 +105,14 @@ const formatGenres = (genres: string[]): string => genres.join(', ');
     font-size: 13px;
   }
   .card-id {
-    color: var(--accent-text);
-    font-family: 'Space Mono', monospace;
-  }
-  .cover-frame {
-    position: relative;
-    background: var(--secondary-text);
-    display: flex;
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 1;
-  }
-  .cover-art {
-    background: var(--card-bg);
-    padding: 24px;
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    color: var(--primary-text);
+    text-shadow: 0px 0px 2px var(--bg);
+    font-family: var(--mono);
+    font-size: 12px;
   }
   .cover,
   .retro-cover {

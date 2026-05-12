@@ -9,7 +9,7 @@ href:
 cover:
   {
     default: '../assets/stalled_at_a_crossroad.jpg',
-    retro: '../assets/stalled_at_a_crossroad.jpg',
+    retro: '../assets/retro/stalled_at_a_crossroads.png',
   }
 date: 2502
 ---

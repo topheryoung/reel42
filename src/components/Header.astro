@@ -1,44 +1,47 @@
 ---
-import { Image } from 'astro:assets';
-import Reel42 from '../icons/reel42.svg';
+import Logo from './Logo.astro';
 import Dark from '../components/modes/Dark.astro';
 import Mono from '../components/modes/Mono.astro';
+import Retro from './modes/Retro.astro';
 
 const isAboutPage = Astro.url.pathname === '/about';
 ---
 
 <header>
+  <div class="logo">
+    <Logo />
+  </div>
   <nav>
-    <a href={isAboutPage ? '/' : '/about'} data-astro-prefetch>
-      {isAboutPage ? 'back' : 'about'}
+    <a href="/" class={!isAboutPage ? 'active' : ''} data-astro-prefetch>
+      Mixtapes
+    </a>
+    <a href="/about" class={isAboutPage ? 'active' : ''} data-astro-prefetch>
+      About
     </a>
   </nav>
-  <div class="logo">
-    <a href="/" data-astro-prefetch>
-      <Image src={Reel42} alt="Reel 42 home" loading="eager" />
-    </a>
-  </div>
   <div class="controls">
     <Dark />
     <Mono />
+    <Retro />
   </div>
 </header>
 <style>
   header {
-    padding: 24px 36px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--card-accent);
+    background-color: var(--bg);
+    padding: 16px 32px;
   }
   header > nav,
   header > div {
     width: 100%;
-  }
-  .logo {
-    display: flex;
-    justify-content: center;
   }
   .controls {
     display: grid;
@@ -48,10 +51,27 @@ const isAboutPage = Astro.url.pathname === '/about';
     justify-content: end;
     width: max-content;
   }
-  a {
+  nav {
+    display: grid;
+    gap: 24px;
+    letter-spacing: 1.1px;
+    grid-auto-flow: column;
+    gap: 24px;
+    grid-row: 1;
+    grid-column: 2;
+    place-content: center;
+  }
+  nav a {
     text-decoration: none;
-    color: var(--primary-text);
+    color: var(--secondary-text);
     font-size: 12px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    padding: 2px 0;
+    &.active {
+      color: var(--primary-text);
+      border-bottom: 2px solid var(--primary);
+    }
   }
 
   @media (max-width: 768px) {
@@ -70,14 +90,23 @@ const isAboutPage = Astro.url.pathname === '/about';
   .control-btn {
     cursor: pointer;
     background: transparent;
-    border: none;
-    color: var(--disabled-text);
-    padding: 0;
+    border: 1px solid var(--secondary-text);
+    color: var(--primary-text);
+    padding: 5px 9px;
     margin: 0;
-    font-size: 12px;
+    font-size: 10px;
+    font-family: var(--mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
   }
   .control-btn.is-active {
-    color: var(--primary-text);
+    color: var(--bg);
+    background-color: var(--primary);
+    border-color: var(--primary);
   }
   @media (max-width: 768px) {
     .keyboard-shortcut {
