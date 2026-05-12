@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/2023/pl.u-qxylEY6s3MBkK8k?l=en',
     spotify: 'https://open.spotify.com/playlist/5bSQsPzU1gf2ZDZIupIyMC?si=60174976d5634668',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rU-2rpoRUspGSCdn_zrPUF9&si=6OIht1JJVR9H9CH-',
   }
 cover:
   {

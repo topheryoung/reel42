@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/two-pink-transformers/pl.u-yZyVE33FdoxR7DR?l=en',
     spotify: 'https://open.spotify.com/playlist/1abMY7CMy7czckUX6TwuU6?si=4d0a683cc5f34472',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rWlI-fkiiOhqZ3al8lNeH2I&si=GPxir1qVjLAEW1p4',
   }
 cover:
   {

@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/2020/pl.u-4JomaBmCJl5kWdk?l=en',
     spotify: 'https://open.spotify.com/playlist/6vYbT1lvie7XeNXaMLTXdh?si=5d5b5d9647284eef',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rV5jh6yY7T8B8ogTZLTIRXO&si=tk4AtTWflUJTxaqO',
   }
 cover:
   {
@@ -18,7 +19,7 @@ Track List
 
 - Dan Deacon - Become a Mountain
 - Gorillaz - Aries (feat. Peter Hook)
-- HMLTD - Satan. Lucella, & I
+- HMLTD - Satan. Luella, & I
 - Holy Fuck - Moment
 - Oliver Tree - Bury Me Alive
 - The Strokes - At the Door

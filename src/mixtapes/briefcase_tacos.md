@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/briefcase-tacos/pl.u-MDAWvegFAdrDm2D?l=en',
     spotify: 'https://open.spotify.com/playlist/72ubYnHerpjTWP2oCJOY5f?si=fb93c88b0a7b4075',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rUjRqhTDNaRaH-hqR8XB0J-&si=p_DfZSX-GdGUHhfD',
   }
 cover:
   {

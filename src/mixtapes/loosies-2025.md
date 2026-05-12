@@ -4,7 +4,8 @@ genre: ['Top Songs of the Year', 'EOY', '2025']
 href:
   {
     apple: 'https://music.apple.com/es/playlist/2025/pl.u-pMylgxvSWel7gG7?l=en',
-    spotify: 'https://music.apple.com/es/playlist/2025/pl.u-pMylgxvSWel7gG7?l=en'
+    spotify: 'https://music.apple.com/es/playlist/2025/pl.u-pMylgxvSWel7gG7?l=en',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rV3e8Zj2P9mceEnUTK7aE4b&si=xguhLjd1C30pOPN3',
   }
 cover:
   {
@@ -22,6 +23,6 @@ Track List
 - Destroyer - Hydroplaning Off the Edge of the World
 - Maruja - Look Down On Us
 - Totorro - New Music
-- Portugal. The Man - Denali 
+- Portugal. The Man - Denali
 - Rosalia - Berghain
 - Drugdealer & Weyes Blood - Real Thing

@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/2024/pl.u-qxylEeDu3MBkK8k?l=en',
     spotify: 'https://open.spotify.com/playlist/0q3snlOKMwKS4yoJeAfzEW?si=7f245b82c06c4cc8',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rVQ5jgY3j738DnAdnSvJq-s&si=PQvymQS8YqO_ccbj',
   }
 cover:
   {
