@@ -78,6 +78,12 @@ const isAboutPage = Astro.url.pathname === '/about';
     header {
       padding: 24px 24px;
     }
+    .controls {
+      display: none;
+    }
+    nav {
+      grid-column: 3;
+    }
   }
 
   @media (max-width: 480px) {
@@ -107,10 +113,5 @@ const isAboutPage = Astro.url.pathname === '/about';
     color: var(--bg);
     background-color: var(--primary);
     border-color: var(--primary);
-  }
-  @media (max-width: 768px) {
-    .keyboard-shortcut {
-      display: none;
-    }
   }
 </style>
