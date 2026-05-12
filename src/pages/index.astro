@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { buildDisplayId } from '../utils/displayId';
 
 const fetchedMixtapes = await getCollection('mixtapes');
 const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date);
@@ -10,32 +9,26 @@ const mixtapes = fetchedMixtapes.sort((a, b) => b.data.date - a.data.date);
 const EAGER_COUNT = 3;
 ---
 
-<Layout title="Reel42">
+<Layout
+  title="Reel42"
+  description="Curated mixtapes paired with original album art. A music and design playground by Christopher Young."
+>
   <main>
     <section role="list" class="card-grid">
       {
         mixtapes.map((mix, index) => {
-          const inverseIndex = mixtapes.length - index;
           const loadingMode = index < EAGER_COUNT ? 'eager' : 'lazy';
           const fetchPriority = index < EAGER_COUNT ? 'high' : undefined;
           return (
-            <>
-              <Card
-                href={mix.data.href}
-                title={mix.data.title}
-                genre={mix.data.genre}
-                displayID={buildDisplayId(
-                  mix.data.date,
-                  mix.data.title,
-                  inverseIndex
-                )}
-                cover={mix.data.cover}
-                alt={mix.data.title}
-                id={mix.id}
-                loading={loadingMode}
-                fetchpriority={fetchPriority}
-              />
-            </>
+            <Card
+              title={mix.data.title}
+              genre={mix.data.genre}
+              cover={mix.data.cover}
+              alt={mix.data.title}
+              id={mix.id}
+              loading={loadingMode}
+              fetchpriority={fetchPriority}
+            />
           );
         })
       }

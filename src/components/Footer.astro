@@ -11,12 +11,7 @@ const isIndex = Astro.url.pathname === '/';
   {
     isIndex && (
       <div class="end-of-reel">
-        <button
-          class="control-btn"
-          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        >
-          Rewind Reel
-        </button>
+        <button class="control-btn" id="rewindReel">Rewind Reel</button>
       </div>
     )
   }
@@ -36,8 +31,6 @@ const isIndex = Astro.url.pathname === '/';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
   }
   .copyright {
     grid-column: 1;
@@ -66,3 +59,9 @@ const isIndex = Astro.url.pathname === '/';
     font-size: 12px;
   }
 </style>
+
+<script>
+  document.getElementById('rewindReel')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
