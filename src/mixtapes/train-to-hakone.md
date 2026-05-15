@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/train-to-hakone/pl.u-pMyl1KMtWel7gG7?l=en',
     spotify: 'https://open.spotify.com/playlist/6IdAjK3xGFKlhwuNik8KyI?si=2167a83ad64d4b54',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rUXqFq1a9aOBVAMrQLaj__H&si=eDhjQQYGJJMTbsA-',
   }
 cover:
   {

@@ -214,7 +214,6 @@ const jsonLd = {
     font-size: clamp(48px, 6vw, 88px);
     line-height: 0.95;
     letter-spacing: -0.025em;
-    text-transform: uppercase;
     margin: 0;
     color: var(--header-text);
     padding-bottom: 0.12em;
@@ -337,6 +336,20 @@ const jsonLd = {
   @media (max-width: 480px) {
     .hero {
       padding: 32px 12px 24px;
+    }
+    .meta,
+    .info,
+    .listen {
+      padding-right: 12px;
+      padding-left: 12px;
+    }
+    .listen-label {
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+    .listen {
+      display: flex;
+      flex-direction: column;
     }
     .tracklist {
       padding: 24px 12px;

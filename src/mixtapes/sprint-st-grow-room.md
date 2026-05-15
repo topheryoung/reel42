@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/spring-st-grow-room/pl.u-pMyl1pLSWel7gG7?l=en',
     spotify: 'https://open.spotify.com/playlist/4xOxSEE4bxzMlv1uNzJtPh?si=cc20fb9db29046eb',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rVu-n7s5a3-4JiRbxGMhl5l&si=PIuz2tBJRBAJhiIq',
   }
 cover:
   {

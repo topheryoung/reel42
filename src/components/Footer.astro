@@ -58,6 +58,31 @@ const isIndex = Astro.url.pathname === '/';
     color: var(--primary-text);
     font-size: 12px;
   }
+
+  @media (max-width: 480px) {
+    footer {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 24px;
+    }
+    .end-of-reel {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      display: block;
+    }
+    .end-of-reel .control-btn {
+      width: 100%;
+    }
+    .copyright {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .colophon {
+      grid-column: 2;
+      grid-row: 2;
+      text-align: right;
+    }
+  }
 </style>
 
 <script>

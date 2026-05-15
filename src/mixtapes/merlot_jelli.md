@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/merlot-jelli/pl.u-55D6XjqC6L0R4PR?l=en',
     spotify: 'https://open.spotify.com/playlist/61yaEF7bgby3CYPYOspDhC?si=ee1fb4f040934fad',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rWCaK6Z8SfXPt5EbdZpbSAD&si=FjMJzLuX2WxYREAk',
   }
 cover:
   {

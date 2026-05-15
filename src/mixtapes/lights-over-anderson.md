@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/lights-over-anderson/pl.u-MDAWvJjFAdrDm2D?l=en',
     spotify: 'https://open.spotify.com/playlist/3PrZEeLZdgiio7GEyz095Z?si=dd73ea64d9c2422a',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rVviMM6S7xpgbXVL1k3iBC9&si=v3fZ1_FuNbpLL1Cq',
   }
 cover:
   {

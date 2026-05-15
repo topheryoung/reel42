@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/tempests-of-titan/pl.u-zPyLlJ9teLYaXEa?l=en',
     spotify: 'https://open.spotify.com/playlist/6kIvI4ICB256VWapu7pOrx?si=f9d8fb722ac74f40',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rVoeeNaLs6nViR1NgBrwerb&si=R7Tk5wOL9BATPnkR',
   }
 cover:
   {

@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/pitt-wentworth/pl.u-55D6ZNlH6L0R4PR?l=en',
     spotify: 'https://open.spotify.com/playlist/1hE6gBi88csVWoxpSF1DTu?si=17c12d2b4a8b4236',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rXX4TeRlI88pGUekrjxPita&si=sMjS1Vrv6f0a9zYD',
   }
 cover:
   {

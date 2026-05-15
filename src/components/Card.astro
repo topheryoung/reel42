@@ -104,10 +104,9 @@ const formatGenres = (genres: string[]): string => genres[0];
     display: none;
   }
 
-  /* Mobile */
   @media (max-width: 480px) {
-    .card-details {
-      flex-direction: column-reverse;
+    .card-details > h3 {
+      text-align: right;
     }
   }
 </style>
