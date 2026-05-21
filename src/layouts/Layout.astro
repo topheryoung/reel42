@@ -46,6 +46,21 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
     />
     <meta name="generator" content={Astro.generator} />
 
+    <script is:inline>
+      (function () {
+        var doc = document.documentElement;
+        var theme = localStorage.getItem('theme');
+        var darkOn =
+          theme === null
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            : theme === 'true';
+        if (darkOn) doc.classList.add('dark');
+        if (localStorage.getItem('mono') === 'true') doc.classList.add('mono');
+        if (localStorage.getItem('retro-mode') === 'true')
+          doc.classList.add('retro-mode');
+      })();
+    </script>
+
     <title>{title}</title>
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Christopher Young | hellotopher.com" />
