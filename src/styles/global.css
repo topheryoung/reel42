@@ -28,7 +28,8 @@
   --primary-btn: var(--grey-20);
 
   --mono: 'Space Mono', monospace;
-  --sans-serif: 'Hanken Grotesk Variable';
+  --sans-serif: 'Hanken Grotesk Variable', 'Hanken Fallback', Helvetica,
+    sans-serif;
 }
 :root.dark {
   --bg: var(--grey-10);
