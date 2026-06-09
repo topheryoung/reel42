@@ -116,19 +116,23 @@ html.mono {
 
 .cover,
 .retro-cover {
-  opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-.cover.is-loaded,
-.retro-cover.is-loaded {
-  opacity: 1;
+/* Only hide for the fade-in when JS is present to reveal them again.
+   Without JS (or if the script fails), images stay visible. */
+.js .cover:not(.is-loaded),
+.js .retro-cover:not(.is-loaded) {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .js .cover:not(.is-loaded),
+  .js .retro-cover:not(.is-loaded) {
+    opacity: 1;
+  }
   .cover,
   .retro-cover {
-    opacity: 1;
     transition: none;
   }
 }

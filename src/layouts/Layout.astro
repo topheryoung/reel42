@@ -49,6 +49,7 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
     <script is:inline>
       (function () {
         var doc = document.documentElement;
+        doc.classList.add('js');
         var theme = localStorage.getItem('theme');
         var darkOn =
           theme === null
@@ -84,11 +85,16 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
     <Analytics />
     <script is:inline>
       document.querySelectorAll('img.cover, img.retro-cover').forEach((img) => {
-        if (img.complete && img.naturalWidth > 0) img.classList.add('is-loaded');
-        else
-          img.addEventListener('load', () => img.classList.add('is-loaded'), {
-            once: true,
-          });
+        if (img.complete && img.naturalWidth > 0) {
+          img.classList.add('is-loaded');
+          return;
+        }
+        // Reveal on success OR failure so a broken image is never hidden.
+        var reveal = function () {
+          img.classList.add('is-loaded');
+        };
+        img.addEventListener('load', reveal, { once: true });
+        img.addEventListener('error', reveal, { once: true });
       });
     </script>
   </body>
