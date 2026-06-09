@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://reel42.com',
   prefetch: true,
-  output: 'static',
+  output: 'server',
   adapter: vercel(),
   integrations: [sitemap()],
   experimental: {
