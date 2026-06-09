@@ -82,5 +82,14 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
     <slot />
     <Footer />
     <Analytics />
+    <script is:inline>
+      document.querySelectorAll('img.cover, img.retro-cover').forEach((img) => {
+        if (img.complete && img.naturalWidth > 0) img.classList.add('is-loaded');
+        else
+          img.addEventListener('load', () => img.classList.add('is-loaded'), {
+            once: true,
+          });
+      });
+    </script>
   </body>
 </html>

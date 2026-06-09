@@ -102,3 +102,33 @@ html.mono {
 .retro-mode .cover {
   display: none;
 }
+
+/* Cover art: shimmer placeholder lives on the frame; the image fades in
+   once decoded so the runtime image transform never reads as a blank box. */
+@keyframes cover-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.cover,
+.retro-cover {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cover.is-loaded,
+.retro-cover.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover,
+  .retro-cover {
+    opacity: 1;
+    transition: none;
+  }
+}

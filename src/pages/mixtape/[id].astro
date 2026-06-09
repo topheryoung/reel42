@@ -42,7 +42,7 @@ const tracks = parseTracks(mixtape.body ?? '');
           src={cover.retro}
           alt={title}
           class="retro-cover"
-          loading="eager"
+          loading="lazy"
         />
       </div>
       <div class="meta">
@@ -155,9 +155,21 @@ const tracks = parseTracks(mixtape.body ?? '');
   }
   .cover-frame {
     aspect-ratio: 1 / 1;
-    background: var(--card-bg);
+    background: linear-gradient(
+      100deg,
+      var(--card-bg) 30%,
+      var(--card-accent) 50%,
+      var(--card-bg) 70%
+    );
+    background-size: 200% 100%;
+    animation: cover-shimmer 1.6s ease-in-out infinite;
     outline: 1px solid var(--card-accent);
     overflow: hidden;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cover-frame {
+      animation: none;
+    }
   }
   .cover-frame :global(.cover),
   .cover-frame :global(.retro-cover) {

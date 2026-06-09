@@ -49,7 +49,7 @@ const formatGenres = (genres: string[]): string => genres[0];
         widths={[240, 360, 540, 720, 900]}
         sizes="(max-width: 480px) 100vw, (max-width: 811px) 50vw, 33vw"
         quality={75}
-        loading={loading}
+        loading="lazy"
         decoding="async"
       />
     </div>
@@ -69,9 +69,21 @@ const formatGenres = (genres: string[]): string => genres[0];
   }
   .cover-frame {
     position: relative;
-    background: var(--secondary-text);
+    background: linear-gradient(
+      100deg,
+      var(--card-bg) 30%,
+      var(--card-accent) 50%,
+      var(--card-bg) 70%
+    );
+    background-size: 200% 100%;
+    animation: cover-shimmer 1.6s ease-in-out infinite;
     display: flex;
     aspect-ratio: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cover-frame {
+      animation: none;
+    }
   }
   .card-title {
     color: var(--primary-text);

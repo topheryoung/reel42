@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   prefetch: true,
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({ imageService: true }),
   experimental: {
     svg: true,
   },
