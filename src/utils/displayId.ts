@@ -1,3 +1,18 @@
+import { getCollection } from 'astro:content';
+
+export async function findIndex(id: string) {
+  const entries = await getCollection('mixtapes');
+
+  entries.sort((a, b) => a.data.date - b.data.date);
+
+  const i = entries.findIndex((entry) => entry.id === id);
+  if (i === -1) {
+    console.error(`No entry found with slug/id: ${id}`);
+  }
+
+  return i + 1;
+}
+
 export function buildDisplayId(
   date: number,
   title: string,
