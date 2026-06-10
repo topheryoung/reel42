@@ -5,6 +5,7 @@ href:
   {
     apple: 'https://music.apple.com/es/playlist/stalled-at-a-crossroad/pl.u-EdAVz64uDAxlP9l?l=en',
     spotify: 'https://open.spotify.com/playlist/7ELEmMkIrl2kYOqVcK60GO?si=659ca0561020479b',
+    youtube: 'https://music.youtube.com/playlist?list=PLHLBnjrrw-rVs6cPCkyYnjFgmIj4R1q2E&si=55yzjyxJVt3sfbf1',
   }
 cover:
   {

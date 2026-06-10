@@ -95,11 +95,11 @@ html.mono {
   padding-left: 20px;
 }
 
-.retro-mode .retro-cover {
+.retro .retro-cover {
   display: block !important;
 }
 
-.retro-mode .cover {
+.retro .cover {
   display: none;
 }
 

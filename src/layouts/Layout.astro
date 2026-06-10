@@ -47,19 +47,17 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
     <meta name="generator" content={Astro.generator} />
 
     <script is:inline>
-      (function () {
-        var doc = document.documentElement;
-        doc.classList.add('js');
-        var theme = localStorage.getItem('theme');
-        var darkOn =
-          theme === null
-            ? window.matchMedia('(prefers-color-scheme: dark)').matches
-            : theme === 'true';
-        if (darkOn) doc.classList.add('dark');
-        if (localStorage.getItem('mono') === 'true') doc.classList.add('mono');
-        if (localStorage.getItem('retro-mode') === 'true')
-          doc.classList.add('retro-mode');
-      })();
+      const doc = document.documentElement;
+      const dark = localStorage.getItem('dark');
+      const mono = localStorage.getItem('mono');
+      const retro = localStorage.getItem('retro');
+      const darkOn =
+        dark === null
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : dark === 'true';
+      if (darkOn) doc.classList.add('dark');
+      if (mono === 'true') doc.classList.add('mono');
+      if (retro === 'true') doc.classList.add('retro');
     </script>
 
     <title>{title}</title>

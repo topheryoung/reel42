@@ -1,14 +1,12 @@
-<button class="control-btn dark-mode-button" id="themeToggle">
-  dark <span class="keyboard-shortcut">(d)</span>
-</button>
+<button class="control-btn" id="darkToggle">dark (d)</button>
 
 <script>
   import { initModeToggle } from '../../utils/modeToggle';
 
   initModeToggle({
-    buttonId: 'themeToggle',
+    buttonId: 'darkToggle',
     className: 'dark',
-    storageKey: 'theme',
+    storageKey: 'dark',
     hotkey: 'd',
     defaultOn: () => window.matchMedia('(prefers-color-scheme: dark)').matches,
   });

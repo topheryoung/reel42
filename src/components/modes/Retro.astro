@@ -1,14 +1,12 @@
-<button class="control-btn retro-mode-button" id="retroToggle">
-  retro (r)
-</button>
+<button class="control-btn" id="retroToggle">retro (r)</button>
 
 <script>
   import { initModeToggle } from '../../utils/modeToggle';
 
   initModeToggle({
     buttonId: 'retroToggle',
-    className: 'retro-mode',
-    storageKey: 'retro-mode',
+    className: 'retro',
+    storageKey: 'retro',
     hotkey: 'r',
   });
 </script>
