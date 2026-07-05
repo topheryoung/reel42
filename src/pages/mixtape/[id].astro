@@ -1,33 +1,61 @@
 ---
-import { getEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import { findIndex, buildDisplayId } from '../../utils/displayId';
+import { buildDisplayId } from '../../utils/displayId';
 import { parseTracks } from '../../utils/parseTracks';
 
-const { id } = Astro.params;
-
-if (id === undefined) {
-  return Astro.redirect('/404');
-}
-const mixtape = await getEntry('mixtapes', id);
-
-if (mixtape === undefined) {
-  return Astro.redirect('/404');
+export async function getStaticPaths() {
+  const mixtapes = await getCollection('mixtapes');
+  const sorted = [...mixtapes].sort((a, b) => a.data.date - b.data.date);
+  return sorted.map((entry, i) => ({
+    params: { id: entry.id },
+    props: { entry, entryIndex: i + 1 },
+  }));
 }
 
-const { title, cover, genre, href, date } = mixtape.data;
-const entryIndex = await findIndex(id);
+interface Props {
+  entry: CollectionEntry<'mixtapes'>;
+  entryIndex: number;
+}
+
+const { entry, entryIndex } = Astro.props;
+const { title, cover, genre, href, date } = entry.data;
 const displayId = buildDisplayId(date, title, entryIndex);
 const year = 2000 + Math.floor(date / 100);
 
-const tracks = parseTracks(mixtape.body ?? '');
+const tracks = parseTracks(entry.body ?? '');
 // const half = Math.ceil(tracks.length / 2);
 // const sideA = tracks.slice(0, half);
 // const sideB = tracks.slice(half);
+
+const description = `${title} — a ${genre.join(', ')} mixtape (${tracks.length} tracks) curated by Christopher Young, with original album art.`;
+const ogImage = new URL(cover.default.src, Astro.site ?? Astro.url).toString();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicPlaylist',
+  name: title,
+  url: Astro.url.toString(),
+  image: ogImage,
+  genre,
+  numTracks: tracks.length,
+  track: tracks.map((t) => ({
+    '@type': 'MusicRecording',
+    name: t.title,
+    ...(t.artist && {
+      byArtist: { '@type': 'MusicGroup', name: t.artist },
+    }),
+  })),
+};
 ---
 
-<Layout title={`Reel42 | ${title}`}>
+<Layout title={`Reel42 | ${title}`} description={description} ogImage={ogImage}>
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(jsonLd)}
+  />
   <main class="detail">
     <nav class="breadcrumb">
       <a href="/" data-astro-prefetch>← Mixtapes</a>
@@ -36,13 +64,27 @@ const tracks = parseTracks(mixtape.body ?? '');
     </nav>
 
     <section class="hero">
-      <div class="cover-frame">
-        <Image src={cover.default} alt={title} class="cover" loading="eager" />
+      <div class="cover-frame" transition:name={`cover-${entry.id}`}>
+        <Image
+          src={cover.default}
+          alt={title}
+          class="cover"
+          widths={[480, 720, 1080, 1200]}
+          sizes="(max-width: 480px) calc(100vw - 24px), (max-width: 811px) calc(100vw - 48px), 51vw"
+          quality={75}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
         <Image
           src={cover.retro}
           alt={title}
           class="retro-cover"
+          widths={[480, 720, 1080, 1200]}
+          sizes="(max-width: 480px) calc(100vw - 24px), (max-width: 811px) calc(100vw - 48px), 51vw"
+          quality={75}
           loading="lazy"
+          decoding="async"
         />
       </div>
       <div class="meta">
@@ -138,6 +180,7 @@ const tracks = parseTracks(mixtape.body ?? '');
   .breadcrumb a {
     color: var(--secondary-text);
     text-decoration: none;
+    transition: color 0.15s ease;
   }
   .breadcrumb a:hover {
     color: var(--primary);
@@ -237,10 +280,15 @@ const tracks = parseTracks(mixtape.body ?? '');
     border: 1px solid var(--card-accent);
     color: var(--primary-text);
     text-decoration: none;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease,
+      background-color 0.15s ease;
   }
   .listen-btn:hover {
     border-color: var(--primary);
     color: var(--primary);
+    background-color: color-mix(in srgb, var(--primary) 8%, transparent);
   }
 
   .tracklist {
@@ -283,11 +331,21 @@ const tracks = parseTracks(mixtape.body ?? '');
     grid-template-columns: 32px 1fr;
     gap: 14px;
     align-items: baseline;
+    padding: 3px 8px;
+    margin: -3px -8px;
+    transition: background-color 0.15s ease;
+  }
+  .side li:hover {
+    background-color: var(--card-bg);
+  }
+  .side li:hover .num {
+    color: var(--primary);
   }
   .num {
     font-family: var(--mono);
     color: var(--secondary-text);
     font-size: 10px;
+    transition: color 0.15s ease;
   }
   .track {
     font-family: var(--sans-serif);

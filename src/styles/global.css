@@ -116,7 +116,15 @@ html.mono {
 
 .cover,
 .retro-cover {
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.45s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* Only hide for the fade-in when JS is present to reveal them again.

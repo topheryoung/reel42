@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro';
+import { ClientRouter } from 'astro:transitions';
 import '@fontsource/space-mono/400.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
@@ -45,19 +46,29 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
       crossorigin
     />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
 
     <script is:inline>
-      const doc = document.documentElement;
-      const dark = localStorage.getItem('dark');
-      const mono = localStorage.getItem('mono');
-      const retro = localStorage.getItem('retro');
-      const darkOn =
-        dark === null
-          ? window.matchMedia('(prefers-color-scheme: dark)').matches
-          : dark === 'true';
-      if (darkOn) doc.classList.add('dark');
-      if (mono === 'true') doc.classList.add('mono');
-      if (retro === 'true') doc.classList.add('retro');
+      (() => {
+        // Runs before paint, and again after every view-transition swap —
+        // the router replaces <html>'s classes with the server-rendered ones.
+        const applyModes = () => {
+          const doc = document.documentElement;
+          doc.classList.add('js');
+          const dark = localStorage.getItem('dark');
+          const mono = localStorage.getItem('mono');
+          const retro = localStorage.getItem('retro');
+          const darkOn =
+            dark === null
+              ? window.matchMedia('(prefers-color-scheme: dark)').matches
+              : dark === 'true';
+          doc.classList.toggle('dark', darkOn);
+          doc.classList.toggle('mono', mono === 'true');
+          doc.classList.toggle('retro', retro === 'true');
+        };
+        applyModes();
+        document.addEventListener('astro:after-swap', applyModes);
+      })();
     </script>
 
     <title>{title}</title>
@@ -82,18 +93,27 @@ const absoluteOgImage = new URL(ogImage, Astro.site ?? Astro.url).toString();
     <Footer />
     <Analytics />
     <script is:inline>
-      document.querySelectorAll('img.cover, img.retro-cover').forEach((img) => {
-        if (img.complete && img.naturalWidth > 0) {
-          img.classList.add('is-loaded');
-          return;
-        }
-        // Reveal on success OR failure so a broken image is never hidden.
-        var reveal = function () {
-          img.classList.add('is-loaded');
+      (() => {
+        const revealCovers = () => {
+          document
+            .querySelectorAll('img.cover, img.retro-cover')
+            .forEach((img) => {
+              if (img.complete && img.naturalWidth > 0) {
+                img.classList.add('is-loaded');
+                return;
+              }
+              // Reveal on success OR failure so a broken image is never hidden.
+              var reveal = function () {
+                img.classList.add('is-loaded');
+              };
+              img.addEventListener('load', reveal, { once: true });
+              img.addEventListener('error', reveal, { once: true });
+            });
         };
-        img.addEventListener('load', reveal, { once: true });
-        img.addEventListener('error', reveal, { once: true });
-      });
+        revealCovers();
+        // Fresh images arrive with each view-transition swap.
+        document.addEventListener('astro:page-load', revealCovers);
+      })();
     </script>
   </body>
 </html>
