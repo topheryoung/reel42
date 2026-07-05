@@ -4,7 +4,8 @@ import Dark from '../components/modes/Dark.astro';
 import Mono from '../components/modes/Mono.astro';
 import Retro from './modes/Retro.astro';
 
-const isAboutPage = Astro.url.pathname === '/about';
+const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isAboutPage = pathname === '/about';
 ---
 
 <header>
