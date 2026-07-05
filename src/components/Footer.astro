@@ -17,9 +17,7 @@ const isIndex = Astro.url.pathname === '/';
   }
   <div class="colophon">
     <p>Designed and Developed in BCN</p>
-    <a style="color: var(--primary-text)" href="mailto:info@reel42.com"
-      >info@reel42.com</a
-    >
+    <a href="mailto:info@reel42.com">info@reel42.com</a>
   </div>
 </footer>
 
@@ -57,6 +55,10 @@ const isIndex = Astro.url.pathname === '/';
     text-decoration: none;
     color: var(--primary-text);
     font-size: 12px;
+    transition: color 0.15s ease;
+  }
+  a:hover {
+    color: var(--primary);
   }
 
   @media (max-width: 480px) {
@@ -86,7 +88,13 @@ const isIndex = Astro.url.pathname === '/';
 </style>
 
 <script>
-  document.getElementById('rewindReel')?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Delegated so the handler survives view-transition DOM swaps.
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement | null;
+    if (!target?.closest('#rewindReel')) return;
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 </script>

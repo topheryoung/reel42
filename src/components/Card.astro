@@ -30,7 +30,7 @@ const formatGenres = (genres: string[]): string => genres[0];
 
 <div class="card-item">
   <a href={`/mixtape/${id}`} data-astro-prefetch>
-    <div class="cover-frame">
+    <div class="cover-frame" transition:name={`cover-${id}`}>
       <Image
         src={cover.default}
         alt={alt}
@@ -79,10 +79,29 @@ const formatGenres = (genres: string[]): string => genres[0];
     animation: cover-shimmer 1.6s ease-in-out infinite;
     display: flex;
     aspect-ratio: 1;
+    overflow: hidden;
+    outline: 1px solid transparent;
+    transition: outline-color 0.15s ease;
+  }
+  a:hover .cover-frame,
+  a:focus-visible .cover-frame {
+    outline-color: var(--primary);
+  }
+  a:hover .cover,
+  a:hover .retro-cover,
+  a:focus-visible .cover,
+  a:focus-visible .retro-cover {
+    transform: scale(1.04);
   }
   @media (prefers-reduced-motion: reduce) {
     .cover-frame {
       animation: none;
+    }
+    a:hover .cover,
+    a:hover .retro-cover,
+    a:focus-visible .cover,
+    a:focus-visible .retro-cover {
+      transform: none;
     }
   }
   .card-title {
@@ -91,6 +110,11 @@ const formatGenres = (genres: string[]): string => genres[0];
     margin-top: 6px;
     margin-bottom: 0;
     line-height: 22px;
+    transition: color 0.15s ease;
+  }
+  a:hover .card-title,
+  a:focus-visible .card-title {
+    color: var(--primary);
   }
   .card-details {
     color: var(--secondary-text);
